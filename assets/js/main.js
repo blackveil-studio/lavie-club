@@ -16,6 +16,11 @@
       "hero.scroll": "Scroll",
       "hero.placeholder": "Photo pending — golden hour, somewhere on the season calendar",
 
+      "stats.members": "women in the community",
+      "stats.trips": "trips on the 2026 calendar",
+      "stats.cities": "home cities — Kyiv &amp; Warsaw",
+      "stats.weeks": "weeks a year of Stretch &amp; Tennis",
+
       "manifesto.eyebrow": "The Club",
       "manifesto.heading": "A space to <span class=\"italic accent\">grow</span>, not just to escape.",
       "manifesto.p1": "La Vie Club is a community first — <strong>entrepreneurs, experts and women building something of their own</strong>, across Kyiv, Warsaw and the rest of Europe. Women who take their ambition seriously, and refuse to let it be the only thing they take seriously.",
@@ -37,11 +42,13 @@
       "exp.trips.eyebrow": "Girls Trips",
       "exp.trips.title": "A season of escapes.",
       "exp.trips.desc": "Maldives, Mykonos, Santorini, Milan &amp; Como, Paris, Courchevel — a full calendar across the year, villas and private drivers included, plus intimate off-calendar trips with only a few seats.",
+      "exp.trips.price": "From €1,950 per trip",
 
       "exp.stretch.photo": "Photo pending — Stretch Club, Warsaw park",
       "exp.stretch.eyebrow": "Stretch Club",
       "exp.stretch.title": "Every weekend, outdoors.",
       "exp.stretch.desc": "Morning and evening sessions in the parks of Warsaw and Kyiv — mats provided, every level welcome.",
+      "exp.stretch.price": "30 zł per session",
 
       "exp.tennis.photo": "Photo pending — Tennis Club",
       "exp.tennis.eyebrow": "Tennis Club",
@@ -52,6 +59,19 @@
       "exp.brunch.eyebrow": "Brunches",
       "exp.brunch.title": "The long table.",
       "exp.brunch.desc": "Conversation that runs long, on purpose.",
+
+      "season.eyebrow": "The Calendar",
+      "season.heading": "The 2026 season.",
+      "season.lead": "Eight trips, booked out season by season. A few off-calendar escapes appear without warning — seats are always limited.",
+      "season.limited": "Limited seats",
+      "season.date1": "Mar 20–27", "season.name1": "Maldives",
+      "season.date2": "Jun 15–21", "season.name2": "Mykonos",
+      "season.date3": "Jul 15–21", "season.name3": "Santorini",
+      "season.date4": "Aug 15–21", "season.name4": "Mykonos",
+      "season.date5": "Sep 7–12", "season.name5": "Milan &amp; Como",
+      "season.date6": "Oct 10–17", "season.name6": "Paris &amp; Étretat",
+      "season.date7": "Oct 20–27", "season.name7": "Maldives",
+      "season.date8": "Dec 14–18", "season.name8": "Courchevel",
 
       "journal.eyebrow": "Journal",
       "journal.heading": "Recent moments.",
@@ -98,6 +118,11 @@
       "hero.scroll": "Гортати",
       "hero.placeholder": "Фото очікується — золота година, десь у сезонному календарі",
 
+      "stats.members": "жінок у спільноті",
+      "stats.trips": "поїздок у сезоні 2026",
+      "stats.cities": "рідних міста — Київ &amp; Варшава",
+      "stats.weeks": "тижнів на рік Stretch &amp; Tennis",
+
       "manifesto.eyebrow": "Клуб",
       "manifesto.heading": "Простір, де <span class=\"italic accent\">ростеш</span>, а не лише тікаєш.",
       "manifesto.p1": "La Vie Club — це насамперед спільнота: <strong>підприємиці, експертки й жінки, які будують щось своє</strong>, у Києві, Варшаві та по всій Європі. Жінки, які серйозно ставляться до амбіцій — і не дозволяють цьому бути єдиним, чому приділяють увагу.",
@@ -119,11 +144,13 @@
       "exp.trips.eyebrow": "Girls Trips",
       "exp.trips.title": "Сезон утеч.",
       "exp.trips.desc": "Мальдіви, Міконос, Санторіні, Мілан &amp; Комо, Париж, Куршевель — повний календар на весь рік, з віллами й приватним водієм, плюс камерні позапланові поїздки на кілька місць.",
+      "exp.trips.price": "Від 1950€ за поїздку",
 
       "exp.stretch.photo": "Фото очікується — Stretch Club, парк у Варшаві",
       "exp.stretch.eyebrow": "Stretch Club",
       "exp.stretch.title": "Щовихідних, просто неба.",
       "exp.stretch.desc": "Ранкові й вечірні заняття у парках Варшави та Києва — килимки надаємо, будь-який рівень підготовки.",
+      "exp.stretch.price": "30 злотих за заняття",
 
       "exp.tennis.photo": "Фото очікується — Tennis Club",
       "exp.tennis.eyebrow": "Tennis Club",
@@ -134,6 +161,19 @@
       "exp.brunch.eyebrow": "Бранчі",
       "exp.brunch.title": "Довгий стіл.",
       "exp.brunch.desc": "Розмова, що триває довго. Свідомо.",
+
+      "season.eyebrow": "Календар",
+      "season.heading": "Сезон 2026.",
+      "season.lead": "Вісім поїздок, які розбирають сезон за сезоном. Кілька позапланових утеч з'являються без попередження — місць завжди мало.",
+      "season.limited": "Мало місць",
+      "season.date1": "20–27 бер", "season.name1": "Мальдіви",
+      "season.date2": "15–21 чер", "season.name2": "Міконос",
+      "season.date3": "15–21 лип", "season.name3": "Санторіні",
+      "season.date4": "15–21 сер", "season.name4": "Міконос",
+      "season.date5": "7–12 вер", "season.name5": "Мілан &amp; Комо",
+      "season.date6": "10–17 жов", "season.name6": "Париж &amp; Етрета",
+      "season.date7": "20–27 жов", "season.name7": "Мальдіви",
+      "season.date8": "14–18 гру", "season.name8": "Куршевель",
 
       "journal.eyebrow": "Журнал",
       "journal.heading": "Останні моменти.",
@@ -192,6 +232,23 @@
   document.querySelectorAll(".lang-toggle button").forEach(function(btn){
     btn.addEventListener("click", function(){ applyLang(btn.getAttribute("data-lang")); });
   });
+
+  /* ---------------- hero video (falls back to placeholder if no file yet) ---------------- */
+  var heroVideo = document.getElementById("heroVideo");
+  var heroMedia = document.getElementById("heroMedia");
+  if (heroVideo){
+    heroVideo.addEventListener("loadeddata", function(){
+      heroVideo.classList.add("is-ready");
+      heroMedia.classList.add("has-video");
+    });
+    heroVideo.addEventListener("error", function(){
+      heroVideo.remove();
+    });
+    // If no <source> resolves, the element itself errors on the source, not always the video tag.
+    heroVideo.querySelectorAll("source").forEach(function(src){
+      src.addEventListener("error", function(){ heroVideo.remove(); });
+    });
+  }
 
   /* ---------------- header state on scroll ---------------- */
   var header = document.getElementById("siteHeader");

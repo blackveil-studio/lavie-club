@@ -250,7 +250,17 @@ button{ font-family: inherit; cursor: pointer; }
   position: absolute; inset: 0;
   background: linear-gradient(165deg, #7a4a37 0%, #4a2c22 55%, #2a1712 100%);
 }
+.hero-video{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s var(--ease);
+}
+.hero-video.is-ready{ opacity: 1; }
 .hero-media .placeholder-label{ color: rgba(251,249,244,0.55); }
+.hero-media .placeholder{ transition: opacity 0.6s var(--ease); }
+.hero-media.has-video .placeholder{ opacity: 0; }
 .hero-media::after{
   content: "";
   position: absolute; inset: 0;
@@ -329,6 +339,41 @@ button{ font-family: inherit; cursor: pointer; }
   color: var(--stone);
   padding: var(--space-2);
   font-weight: 600;
+}
+
+/* ==========================================================================
+   Stats — real, verified numbers only
+   ========================================================================== */
+.stats{ background: var(--ink); padding: var(--space-6) 0; }
+.stats-row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat{
+  text-align: center;
+  padding: 0 var(--space-3);
+  border-left: 1px solid rgba(251,249,244,0.14);
+}
+.stat:first-child{ border-left: none; }
+.stat-num{
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--brass-soft);
+  line-height: 1.2;
+}
+.stat-label{
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(251,249,244,0.6);
+}
+@media (max-width: 880px){
+  .stats-row{ grid-template-columns: repeat(2, 1fr); gap: var(--space-4) 0; }
+  .stat:nth-child(3){ border-left: none; }
+  .stat:nth-child(2n+1){ border-left: none; }
 }
 
 /* ==========================================================================
@@ -425,6 +470,15 @@ button{ font-family: inherit; cursor: pointer; }
 .exp-card h3{ font-size: var(--fs-h3); color: #FBF9F4; margin-bottom: 0.4em; }
 .exp-card p{ font-size: 0.88rem; color: rgba(251,249,244,0.75); max-width: 34ch; font-weight: 300; }
 .exp-card--main p{ max-width: 46ch; }
+.exp-price{
+  display: inline-block;
+  margin-top: 0.9em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass-soft);
+  font-weight: 600;
+}
 .exp-card .placeholder{ transition: transform 1.4s var(--ease); }
 .exp-card:hover .placeholder{ transform: scale(1.045); }
 
@@ -437,6 +491,50 @@ button{ font-family: inherit; cursor: pointer; }
   .exp-grid{ grid-template-columns: 1fr; grid-template-rows: none; }
   .exp-card--main, .exp-card--a, .exp-card--b, .exp-card--c{ grid-column: 1; grid-row: auto; min-height: 320px; }
 }
+
+/* ==========================================================================
+   Season — the real 2026 calendar, horizontal scroll. Dates carry real
+   information here (an actual sequence), so a strip in date order is
+   earned — unlike arbitrary 01/02/03 numbering on non-sequential content.
+   ========================================================================== */
+.season{ padding: var(--space-12) 0; background: var(--base); }
+.season-strip{
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: var(--space-2);
+  margin-top: var(--space-2);
+}
+.season-item{
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  min-width: 200px;
+  padding: var(--space-4) var(--space-4) var(--space-4) 0;
+  border-left: 1px solid var(--line-brass);
+  padding-left: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.season-date{
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 600;
+}
+.season-item h4{ font-size: 1.5rem; font-weight: 500; }
+.season-tag{
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.season-strip::-webkit-scrollbar{ height: 4px; }
+.season-strip::-webkit-scrollbar-thumb{ background: var(--line-brass); }
 
 /* ==========================================================================
    Journal / Moments — bento, asymmetric like the brand's own feed

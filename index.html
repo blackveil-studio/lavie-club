@@ -82,8 +82,11 @@
 
   <!-- ============================ HERO ============================ -->
   <section class="hero">
-    <div class="hero-media">
-      <div class="placeholder" style="position:absolute;inset:0;">
+    <div class="hero-media" id="heroMedia">
+      <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg">
+        <source src="img/hero.mp4" type="video/mp4">
+      </video>
+      <div class="placeholder" id="heroPlaceholder" style="position:absolute;inset:0;">
         <span class="placeholder-label" data-i18n="hero.placeholder">Photo pending — French Riviera, golden hour</span>
       </div>
     </div>
@@ -95,6 +98,16 @@
         <p class="hero-locations" data-i18n="hero.locations">Mykonos · Santorini · Maldives · Milan &amp; Como · Paris · Courchevel · Warsaw · Kyiv</p>
         <div class="scroll-cue"><span data-i18n="hero.scroll">Scroll</span><span class="line"></span></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================ STATS ============================ -->
+  <section class="stats">
+    <div class="wrap stats-row">
+      <div class="stat reveal"><span class="stat-num">12,600+</span><span class="stat-label" data-i18n="stats.members">women in the community</span></div>
+      <div class="stat reveal"><span class="stat-num">8</span><span class="stat-label" data-i18n="stats.trips">trips on the 2026 calendar</span></div>
+      <div class="stat reveal"><span class="stat-num">2</span><span class="stat-label" data-i18n="stats.cities">home cities — Kyiv &amp; Warsaw</span></div>
+      <div class="stat reveal"><span class="stat-num">52</span><span class="stat-label" data-i18n="stats.weeks">weeks a year of Stretch &amp; Tennis</span></div>
     </div>
   </section>
 
@@ -153,6 +166,7 @@
             <span class="exp-eyebrow" data-i18n="exp.trips.eyebrow">Girls Trips</span>
             <h3 data-i18n="exp.trips.title">A season of escapes.</h3>
             <p data-i18n="exp.trips.desc">Maldives, Mykonos, Santorini, Milan &amp; Como, Paris, Courchevel — a full calendar across the year, villas and private drivers included, plus intimate off-calendar trips with only a few seats.</p>
+            <span class="exp-price" data-i18n="exp.trips.price">From €1,950 per trip</span>
           </div>
         </article>
 
@@ -162,6 +176,7 @@
             <span class="exp-eyebrow" data-i18n="exp.stretch.eyebrow">Stretch Club</span>
             <h3 data-i18n="exp.stretch.title">Every weekend, outdoors.</h3>
             <p data-i18n="exp.stretch.desc">Morning and evening sessions in the parks of Warsaw and Kyiv — mats provided, every level welcome.</p>
+            <span class="exp-price" data-i18n="exp.stretch.price">30 zł per session</span>
           </div>
         </article>
 
@@ -182,6 +197,55 @@
             <p data-i18n="exp.brunch.desc">Conversation that runs long, on purpose.</p>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SEASON ============================ -->
+  <section class="season" id="season">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="season.eyebrow">The Calendar</p>
+          <h2 data-i18n="season.heading">The 2026 season.</h2>
+        </div>
+        <p class="lead" data-i18n="season.lead">Eight trips, booked out season by season. A few off-calendar escapes appear without warning — seats are always limited.</p>
+      </div>
+
+      <div class="season-strip">
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date1">Mar 20–27</span>
+          <h4 data-i18n="season.name1">Maldives</h4>
+        </div>
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date2">Jun 15–21</span>
+          <h4 data-i18n="season.name2">Mykonos</h4>
+        </div>
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date3">Jul 15–21</span>
+          <h4 data-i18n="season.name3">Santorini</h4>
+        </div>
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date4">Aug 15–21</span>
+          <h4 data-i18n="season.name4">Mykonos</h4>
+          <span class="season-tag" data-i18n="season.limited">Limited seats</span>
+        </div>
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date5">Sep 7–12</span>
+          <h4 data-i18n="season.name5">Milan &amp; Como</h4>
+        </div>
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date6">Oct 10–17</span>
+          <h4 data-i18n="season.name6">Paris &amp; Étretat</h4>
+        </div>
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date7">Oct 20–27</span>
+          <h4 data-i18n="season.name7">Maldives</h4>
+        </div>
+        <div class="season-item reveal">
+          <span class="season-date" data-i18n="season.date8">Dec 14–18</span>
+          <h4 data-i18n="season.name8">Courchevel</h4>
+        </div>
       </div>
     </div>
   </section>
