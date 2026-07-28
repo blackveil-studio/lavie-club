@@ -14,8 +14,6 @@
       "hero.sub": "A community, first — trips across the year, weekly movement and matches, long brunches, and women who show up for each other in between.",
       "hero.locations": "Mykonos · Santorini · Maldives · Milan &amp; Como · Paris · Courchevel · Warsaw · Kyiv",
       "hero.scroll": "Scroll",
-      "hero.placeholder": "Photo pending — golden hour, somewhere on the season calendar",
-
       "stats.members": "women in the community",
       "stats.trips": "trips on the 2026 calendar",
       "stats.cities": "home cities — Kyiv &amp; Warsaw",
@@ -117,8 +115,6 @@
       "hero.sub": "Насамперед — спільнота: подорожі впродовж усього сезону, щотижневий рух і матчі, довгі бранчі та жінки, які підтримують одна одну між зустрічами.",
       "hero.locations": "Міконос · Санторіні · Мальдіви · Мілан &amp; Комо · Париж · Куршевель · Варшава · Київ",
       "hero.scroll": "Гортати",
-      "hero.placeholder": "Фото очікується — золота година, десь у сезонному календарі",
-
       "stats.members": "жінок у спільноті",
       "stats.trips": "поїздок у сезоні 2026",
       "stats.cities": "рідних міста — Київ &amp; Варшава",
