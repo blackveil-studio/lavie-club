@@ -72,6 +72,7 @@
       "season.date6": "Oct 10–17", "season.name6": "Paris &amp; Étretat",
       "season.date7": "Oct 20–27", "season.name7": "Maldives",
       "season.date8": "Dec 14–18", "season.name8": "Courchevel",
+      "season.cta": "Live availability updates on Telegram →",
 
       "journal.eyebrow": "Journal",
       "journal.heading": "Recent moments.",
@@ -174,6 +175,7 @@
       "season.date6": "10–17 жов", "season.name6": "Париж &amp; Етрета",
       "season.date7": "20–27 жов", "season.name7": "Мальдіви",
       "season.date8": "14–18 гру", "season.name8": "Куршевель",
+      "season.cta": "Актуальні місця — в Telegram →",
 
       "journal.eyebrow": "Журнал",
       "journal.heading": "Останні моменти.",
