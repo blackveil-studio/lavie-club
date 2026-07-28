@@ -1,24 +1,29 @@
 /* ==========================================================================
-   LA VIE CLUB — design tokens
-   Palette is built from the brand's own material: bleached Aegean stone,
-   midday white, dusk-blue sea, brass light at golden hour. Deliberately NOT
-   the generic cream+terracotta combo — the accent lives in cool blue-grey
-   (sea/dusk), with brass reserved for hairlines and small caps labels only.
+   LA VIE CLUB — design tokens, v2
+   Rebuilt after reading the brand's real posts (season calendar, Stretch
+   Club, the Tennis Club launch, their own manifesto). Real voice is warm,
+   direct, sisterhood-first — "жіноча енергія", sun, skin, golden hour.
+   v1's cool blue-grey read as corporate, not feminine. Primary accent is
+   now a dusty terracotta-rose (sunset light, warmth), aegean demoted to a
+   rare grounding note. Brass stays for hairlines/labels only.
    ========================================================================== */
 :root{
-  --base:        #F5F3EC;   /* bleached stone — page background */
-  --surface:     #ECE8DD;   /* paper alt — section background */
-  --surface-2:   #E3DED0;   /* deeper paper, for cards on surface */
-  --ink:         #221F1A;   /* warm near-black — primary text */
-  --stone:       #746C5E;   /* taupe-grey — secondary text */
-  --stone-quiet: #A39C8C;   /* faint text, captions on light */
-  --aegean:      #33495A;   /* deep sea/dusk blue-grey — primary accent */
-  --aegean-deep: #202E39;   /* darker aegean, hovers */
-  --brass:       #AD8A4E;   /* antique brass — hairlines, labels, metal */
-  --brass-soft:  #C9AD7B;   /* pale brass for dark backgrounds */
+  --base:        #FBF3EA;   /* warm blush-cream — page background */
+  --surface:     #F3E1D2;   /* soft sand — section background */
+  --surface-2:   #E9CFBA;   /* deeper sand, for cards on surface */
+  --ink:         #2B211C;   /* warm near-black — primary text */
+  --stone:       #7C6C5E;   /* warm taupe — secondary text */
+  --stone-quiet: #AB9686;   /* faint text, captions on light */
+  --rose:        #BD6E56;   /* dusty terracotta-rose — primary accent, warmth */
+  --rose-deep:   #8F4B39;   /* deeper rose, hovers/emphasis */
+  --aegean:      #3E5A63;   /* sea — rare grounding accent, used sparingly */
+  --brass:       #B4884A;   /* antique brass — hairlines, labels, metal */
+  --brass-soft:  #E1BD8B;   /* pale brass for dark backgrounds */
   --wine:        #6B2E2E;   /* rare accent — single emphasised words only */
-  --line:        rgba(34,31,26,0.12);
-  --line-brass:  rgba(173,138,78,0.55);
+  --deep:        #34221B;   /* warm espresso — dark section backgrounds */
+  --deep-2:      #23150F;
+  --line:        rgba(43,33,28,0.12);
+  --line-brass:  rgba(180,136,74,0.55);
 
   --serif: "Cormorant", "Times New Roman", serif;
   --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -64,13 +69,26 @@ body{
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  position: relative;
 }
+/* Faint paper grain across the whole page — warmth and texture instead of a flat digital fill. */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.site-header, main, .site-footer{ position: relative; z-index: 1; }
 img{ max-width: 100%; display: block; }
 a{ color: inherit; text-decoration: none; }
 h1, h2, h3, h4{ margin: 0; font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
 p{ margin: 0; }
 button{ font-family: inherit; cursor: pointer; }
-:focus-visible{ outline: 2px solid var(--aegean); outline-offset: 3px; }
+:focus-visible{ outline: 2px solid var(--rose); outline-offset: 3px; }
 
 .wrap{
   max-width: var(--container);
@@ -97,7 +115,7 @@ button{ font-family: inherit; cursor: pointer; }
   display: inline-block;
 }
 .italic{ font-style: italic; }
-.accent{ color: var(--aegean); }
+.accent{ color: var(--rose); }
 .accent-wine{ color: var(--wine); }
 
 /* ---------- Horizon rule — the signature motif ----------
@@ -206,7 +224,7 @@ button{ font-family: inherit; cursor: pointer; }
 .btn-ghost{ border-color: rgba(251,249,244,0.6); color: #FBF9F4; }
 .btn-ghost:hover{ background: #FBF9F4; color: var(--ink); }
 .btn-solid{ background: var(--ink); color: var(--base); }
-.btn-solid:hover{ background: var(--aegean-deep); }
+.btn-solid:hover{ background: var(--rose-deep); }
 
 .nav-toggle{ display: none; background: none; border: none; width: 28px; height: 20px; position: relative; }
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
@@ -230,7 +248,7 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .hero-media{
   position: absolute; inset: 0;
-  background: linear-gradient(165deg, #2c3e4c 0%, #202b34 55%, #1a2229 100%);
+  background: linear-gradient(165deg, #7a4a37 0%, #4a2c22 55%, #2a1712 100%);
 }
 .hero-media .placeholder-label{ color: rgba(251,249,244,0.55); }
 .hero-media::after{
@@ -241,7 +259,7 @@ button{ font-family: inherit; cursor: pointer; }
 .hero-content{
   position: relative;
   z-index: 2;
-  padding: 0 clamp(1.25rem, 4vw, 3rem) var(--space-16);
+  padding: 0 clamp(1.25rem, 4vw, 3rem) var(--space-12);
   max-width: var(--container);
   margin: 0 auto;
   width: 100%;
@@ -250,8 +268,8 @@ button{ font-family: inherit; cursor: pointer; }
 .hero .eyebrow::before{ background: var(--brass-soft); }
 .hero h1{
   font-size: var(--fs-h1);
-  line-height: 1.02;
-  max-width: 16ch;
+  line-height: 1.14;
+  max-width: 20ch;
   font-weight: 400;
 }
 .hero-sub{
@@ -271,7 +289,7 @@ button{ font-family: inherit; cursor: pointer; }
   border-top: 1px solid rgba(251,249,244,0.25);
   flex-wrap: wrap;
 }
-.hero-locations{ font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(251,249,244,0.6); }
+.hero-locations{ font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(251,249,244,0.6); max-width: 46ch; }
 .scroll-cue{
   display: flex; align-items: center; gap: 0.6em;
   font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
@@ -291,7 +309,7 @@ button{ font-family: inherit; cursor: pointer; }
    ========================================================================== */
 .placeholder{
   position: relative;
-  background: linear-gradient(135deg, var(--surface-2) 0%, #d8d2c1 100%);
+  background: linear-gradient(135deg, var(--surface-2) 0%, #d9b895 100%);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -317,39 +335,51 @@ button{ font-family: inherit; cursor: pointer; }
    Manifesto
    ========================================================================== */
 .manifesto{
-  padding: var(--space-24) 0 var(--space-16);
+  padding: var(--space-16) 0;
   background: var(--base);
 }
 .manifesto-grid{
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: var(--space-16);
+  gap: var(--space-12);
   align-items: start;
 }
-.manifesto-head{ position: sticky; top: var(--space-16); }
-.manifesto-head h2{ font-size: var(--fs-h2); line-height: 1.08; margin-top: var(--space-3); }
+.manifesto-head{ position: sticky; top: var(--space-12); }
+.manifesto-head h2{ font-size: var(--fs-h2); line-height: 1.18; margin-top: var(--space-3); max-width: 13ch; }
 .manifesto-body p{
   font-size: var(--fs-lead);
   color: var(--stone);
   font-weight: 300;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-4);
   max-width: 46ch;
 }
 .manifesto-body p strong{ color: var(--ink); font-weight: 500; }
-.manifesto-quote{
+
+.pillars{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--line-brass);
+}
+.pillar-label{
   font-family: var(--serif);
   font-style: italic;
-  font-size: var(--fs-quote);
-  color: var(--aegean);
-  line-height: 1.35;
-  max-width: 20ch;
-  margin-top: var(--space-8);
+  font-size: 1.2rem;
+  color: var(--rose);
+  margin-bottom: 0.5em;
+}
+.pillar p{ font-size: 0.92rem; color: var(--stone); font-weight: 300; line-height: 1.55; }
+
+@media (max-width: 880px){
+  .pillars{ grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ==========================================================================
    Experiences — asymmetric editorial grid, not a uniform card grid
    ========================================================================== */
-.experiences{ padding: var(--space-16) 0; background: var(--surface); }
+.experiences{ padding: var(--space-12) 0; background: var(--surface); }
 .section-head{
   display: flex;
   justify-content: space-between;
@@ -373,10 +403,10 @@ button{ font-family: inherit; cursor: pointer; }
   color: #FBF9F4;
   min-height: 260px;
 }
-.exp-card .placeholder{ position: absolute; inset: 0; background: linear-gradient(160deg, #3a5164 0%, #212d36 100%); }
-.exp-card:nth-child(2) .placeholder{ background: linear-gradient(160deg, #56605a 0%, #2b322e 100%); }
-.exp-card:nth-child(3) .placeholder{ background: linear-gradient(160deg, #6b5a4a 0%, #2f2822 100%); }
-.exp-card:nth-child(4) .placeholder{ background: linear-gradient(160deg, #4a4640 0%, #221f1b 100%); }
+.exp-card .placeholder{ position: absolute; inset: 0; background: linear-gradient(160deg, #a8664f 0%, #3a201a 100%); }
+.exp-card:nth-child(2) .placeholder{ background: linear-gradient(160deg, #7c7a4f 0%, #2e2c1c 100%); }
+.exp-card:nth-child(3) .placeholder{ background: linear-gradient(160deg, #8a6446 0%, #3a2818 100%); }
+.exp-card:nth-child(4) .placeholder{ background: linear-gradient(160deg, #6b4a4a 0%, #2a1c1c 100%); }
 .exp-card .placeholder-label{ color: rgba(251,249,244,0.55); }
 .exp-card::after{
   content:"";
@@ -394,6 +424,7 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .exp-card h3{ font-size: var(--fs-h3); color: #FBF9F4; margin-bottom: 0.4em; }
 .exp-card p{ font-size: 0.88rem; color: rgba(251,249,244,0.75); max-width: 34ch; font-weight: 300; }
+.exp-card--main p{ max-width: 46ch; }
 .exp-card .placeholder{ transition: transform 1.4s var(--ease); }
 .exp-card:hover .placeholder{ transform: scale(1.045); }
 
@@ -410,7 +441,7 @@ button{ font-family: inherit; cursor: pointer; }
 /* ==========================================================================
    Journal / Moments — bento, asymmetric like the brand's own feed
    ========================================================================== */
-.journal{ padding: var(--space-16) 0; background: var(--base); }
+.journal{ padding: var(--space-12) 0; background: var(--base); }
 .bento{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -419,10 +450,10 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .bento-item{ position: relative; overflow: hidden; }
 .bento-item .placeholder{ position: absolute; inset: 0; }
-.bento-item .placeholder{ background: linear-gradient(150deg, #d8d2c1 0%, #c7c0ac 100%); }
-.bento-item:nth-child(3n+1) .placeholder{ background: linear-gradient(150deg, #33495a 0%, #202e39 100%); }
+.bento-item .placeholder{ background: linear-gradient(150deg, #e8cba9 0%, #d3a877 100%); }
+.bento-item:nth-child(3n+1) .placeholder{ background: linear-gradient(150deg, #3e5a63 0%, #22343a 100%); }
 .bento-item:nth-child(3n+1) .placeholder-label{ color: rgba(251,249,244,0.5); }
-.bento-item:nth-child(5n+2) .placeholder{ background: linear-gradient(150deg, #ad8a4e 0%, #7c6134 100%); }
+.bento-item:nth-child(5n+2) .placeholder{ background: linear-gradient(150deg, #b4884a 0%, #7c5934 100%); }
 .bento-item:nth-child(5n+2) .placeholder-label{ color: rgba(251,249,244,0.6); }
 .bento-item .placeholder{ transition: transform 1.2s var(--ease); align-items: flex-end; padding: 0; }
 .bento-item:hover .placeholder{ transform: scale(1.05); }
@@ -451,7 +482,7 @@ button{ font-family: inherit; cursor: pointer; }
 /* ==========================================================================
    Community
    ========================================================================== */
-.community{ padding: var(--space-16) 0; background: var(--surface); }
+.community{ padding: var(--space-12) 0; background: var(--surface); }
 .quote-row{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -484,8 +515,8 @@ button{ font-family: inherit; cursor: pointer; }
    Join / Membership — presented as an invitation, not a lead-gen form
    ========================================================================== */
 .join{
-  padding: var(--space-24) 0;
-  background: var(--aegean-deep);
+  padding: var(--space-16) 0;
+  background: var(--deep);
   color: #FBF9F4;
   position: relative;
   overflow: hidden;
@@ -493,13 +524,15 @@ button{ font-family: inherit; cursor: pointer; }
 .join::before{
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 82% 18%, rgba(173,138,78,0.18), transparent 55%);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(225,189,139,0.16), transparent 55%),
+    radial-gradient(circle at 12% 92%, rgba(189,110,86,0.22), transparent 50%);
 }
 .join-grid{
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  gap: var(--space-12);
   align-items: start;
 }
 .join .eyebrow{ color: var(--brass-soft); }
