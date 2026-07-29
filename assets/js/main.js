@@ -33,7 +33,7 @@
       "manifesto.pillar4.label": "Aesthetic",
       "manifesto.pillar4.desc": "Every gathering made with care. Beauty here isn't decoration, it's part of the point.",
 
-      "statement.line": "The best moments rarely make the itinerary.",
+      "statement.line": "The company was always the point.",
 
       "experiences.eyebrow": "What we do",
       "experiences.heading": "Four ways in.",
@@ -152,7 +152,7 @@
       "manifesto.pillar4.label": "Естетика",
       "manifesto.pillar4.desc": "Кожна зустріч продумана з турботою. Краса тут — не прикраса, а частина суті.",
 
-      "statement.line": "Найкращі миті рідко потрапляють у програму поїздки.",
+      "statement.line": "Компанія завжди була суттю.",
 
       "experiences.eyebrow": "Чим ми живемо",
       "experiences.heading": "Чотири шляхи всередину.",
@@ -286,17 +286,16 @@
 
   /* ---------------- header state on scroll ---------------- */
   var header = document.getElementById("siteHeader");
-  var heroHeight = function(){ var h = document.querySelector(".hero"); return h ? h.offsetHeight : 600; };
-
   var headerCta = header.querySelector(".header-right .btn");
   function onScroll(){
     var y = window.scrollY || window.pageYOffset;
-    var dark = y < heroHeight() - 80;
-    header.classList.toggle("is-scrolled", y > 40);
+    var scrolled = y > 40;
+    var dark = !scrolled;
+    header.classList.toggle("is-scrolled", scrolled);
     header.classList.toggle("is-hero-dark", dark);
     if (headerCta){
-      headerCta.style.color = dark ? "#FBF9F4" : "#2B211C";
-      headerCta.style.borderColor = dark ? "rgba(251,249,244,0.6)" : "#2B211C";
+      headerCta.style.color = dark ? "#FBF9F4" : "#2C221E";
+      headerCta.style.borderColor = dark ? "rgba(251,249,244,0.6)" : "#2C221E";
     }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
