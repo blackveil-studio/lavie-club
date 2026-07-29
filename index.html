@@ -52,6 +52,7 @@
 <a class="sr-only" href="#main">Skip to content</a>
 
 <header class="site-header is-hero-dark" id="siteHeader">
+ <div class="header-inner">
   <a href="#main" class="logo"><img src="img/logo.png" alt="La Vie Club"></a>
   <nav class="main-nav">
     <ul class="nav-links">
@@ -67,9 +68,10 @@
       <span class="lang-sep">/</span>
       <button type="button" data-lang="ua">UA</button>
     </div>
-    <a href="#join" class="btn btn-ghost" data-i18n="nav.join">Request Invitation</a>
+    <a href="#join" class="btn" data-i18n="nav.join">Request Invitation</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
   </div>
+ </div>
 </header>
 
 <div class="mobile-nav" id="mobileNav">
@@ -123,27 +125,35 @@
       <div class="manifesto-body">
         <p class="reveal" data-i18n="manifesto.p1">La Vie Club is a community first — <strong>entrepreneurs, experts and women building something of their own</strong>, across Kyiv, Warsaw and the rest of Europe. Women who take their ambition seriously, and refuse to let it be the only thing they take seriously.</p>
         <p class="reveal" data-i18n="manifesto.p2">We show up for each other on a stretch mat in a park, across a tennis net, over a long brunch, and on a beach three countries away. Different room, same intention — <strong>presence, honesty, and each other</strong>.</p>
+      </div>
+    </div>
 
-        <div class="pillars reveal">
-          <div class="pillar">
-            <p class="pillar-label" data-i18n="manifesto.pillar1.label">Community</p>
-            <p data-i18n="manifesto.pillar1.desc">Women who actually show up for each other — not just at the event, after it too.</p>
-          </div>
-          <div class="pillar">
-            <p class="pillar-label" data-i18n="manifesto.pillar2.label">Growth</p>
-            <p data-i18n="manifesto.pillar2.desc">Honest conversation and real reflection. We're here to grow, not just to network.</p>
-          </div>
-          <div class="pillar">
-            <p class="pillar-label" data-i18n="manifesto.pillar3.label">Balance</p>
-            <p data-i18n="manifesto.pillar3.desc">Room to exhale — between ambition, work, and the rest of a full life.</p>
-          </div>
-          <div class="pillar">
-            <p class="pillar-label" data-i18n="manifesto.pillar4.label">Aesthetic</p>
-            <p data-i18n="manifesto.pillar4.desc">Every gathering made with care. Beauty here isn't decoration, it's part of the point.</p>
-          </div>
+    <div class="wrap">
+      <div class="pillars reveal">
+        <div class="pillar">
+          <p class="pillar-label" data-i18n="manifesto.pillar1.label">Community</p>
+          <p data-i18n="manifesto.pillar1.desc">Women who actually show up for each other — not just at the event, after it too.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-label" data-i18n="manifesto.pillar2.label">Growth</p>
+          <p data-i18n="manifesto.pillar2.desc">Honest conversation and real reflection. We're here to grow, not just to network.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-label" data-i18n="manifesto.pillar3.label">Balance</p>
+          <p data-i18n="manifesto.pillar3.desc">Room to exhale — between ambition, work, and the rest of a full life.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-label" data-i18n="manifesto.pillar4.label">Aesthetic</p>
+          <p data-i18n="manifesto.pillar4.desc">Every gathering made with care. Beauty here isn't decoration, it's part of the point.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ============================ STATEMENT ============================ -->
+  <section class="statement">
+    <img class="real-photo" src="img/moment-poolcoffee.jpg" alt="">
+    <p class="reveal" data-i18n="statement.line">The best moments rarely make the itinerary.</p>
   </section>
 
   <hr class="horizon dusk">
@@ -205,12 +215,9 @@
   <!-- ============================ SEASON ============================ -->
   <section class="season" id="season">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div>
-          <p class="eyebrow" data-i18n="season.eyebrow">The Calendar</p>
-          <h2 data-i18n="season.heading">The 2026 season.</h2>
-        </div>
-        <p class="lead" data-i18n="season.lead">Eight trips, booked out season by season. A few off-calendar escapes appear without warning — seats are always limited.</p>
+      <div class="season-intro reveal">
+        <p class="eyebrow" data-i18n="season.eyebrow">The 2026 Calendar</p>
+        <a href="https://t.me/lavietravel" target="_blank" rel="noopener" class="season-cta" data-i18n="season.cta">Live availability on Telegram →</a>
       </div>
 
       <div class="season-strip">
@@ -248,7 +255,6 @@
           <h4 data-i18n="season.name8">Courchevel</h4>
         </div>
       </div>
-      <a href="https://t.me/lavietravel" target="_blank" rel="noopener" class="season-cta reveal" data-i18n="season.cta">Live availability updates on Telegram →</a>
     </div>
   </section>
 
@@ -370,19 +376,9 @@
         <p class="lead" data-i18n="community.lead">Founders, doctors, lawyers, creatives — women who don't need a trip, they need the right ones to take it with.</p>
       </div>
 
-      <div class="quote-row">
-        <div class="quote-card reveal">
-          <p class="q pending" data-i18n="community.q1">Real quote pending — to be replaced with an actual member testimonial once supplied.</p>
-          <p class="quote-attr" data-i18n="community.a1"><b>—</b> Member, Kyiv</p>
-        </div>
-        <div class="quote-card reveal">
-          <p class="q pending" data-i18n="community.q2">Real quote pending — to be replaced with an actual member testimonial once supplied.</p>
-          <p class="quote-attr" data-i18n="community.a2"><b>—</b> Member, Warsaw</p>
-        </div>
-        <div class="quote-card reveal">
-          <p class="q pending" data-i18n="community.q3">Real quote pending — to be replaced with an actual member testimonial once supplied.</p>
-          <p class="quote-attr" data-i18n="community.a3"><b>—</b> Member, Europe</p>
-        </div>
+      <div class="quote-reserved reveal">
+        <span class="quote-mark" aria-hidden="true">&#8220;</span>
+        <p data-i18n="community.reserved">Their words, not ours — reserved for the members who'll share them.</p>
       </div>
     </div>
   </section>

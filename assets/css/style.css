@@ -85,7 +85,7 @@ body::before{
 .site-header, main, .site-footer{ position: relative; z-index: 1; }
 img{ max-width: 100%; display: block; }
 a{ color: inherit; text-decoration: none; }
-h1, h2, h3, h4{ margin: 0; font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+h1, h2, h3, h4{ margin: 0; font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.08; }
 p{ margin: 0; }
 button{ font-family: inherit; cursor: pointer; }
 :focus-visible{ outline: 2px solid var(--rose); outline-offset: 3px; }
@@ -149,13 +149,9 @@ button{ font-family: inherit; cursor: pointer; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: var(--space-3) clamp(1.25rem, 4vw, 3rem);
   transition: background var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease), padding var(--dur-s) var(--ease);
   border-bottom: 1px solid transparent;
-  mix-blend-mode: normal;
 }
 .site-header.is-scrolled{
   background: rgba(245,243,236,0.88);
@@ -163,6 +159,13 @@ button{ font-family: inherit; cursor: pointer; }
   border-bottom-color: var(--line);
   padding-top: var(--space-2);
   padding-bottom: var(--space-2);
+}
+.header-inner{
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .logo{ display: flex; align-items: center; }
 .logo img{ height: 34px; width: auto; display: block; }
@@ -172,6 +175,11 @@ button{ font-family: inherit; cursor: pointer; }
   color: #FBF9F4;
 }
 .site-header.is-hero-dark:not(.is-scrolled) .nav-link::after{ background: #FBF9F4; }
+
+.site-header .btn{ border-color: var(--ink); color: var(--ink); }
+.site-header .btn:hover{ background: var(--ink); color: var(--base); }
+.site-header.is-hero-dark .btn{ border-color: rgba(251,249,244,0.6); color: #FBF9F4; }
+.site-header.is-hero-dark .btn:hover{ background: #FBF9F4; color: var(--ink); }
 
 .main-nav{ display: flex; align-items: center; gap: var(--space-6); }
 .nav-links{ display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
@@ -214,8 +222,6 @@ button{ font-family: inherit; cursor: pointer; }
   transition: background var(--dur-s) var(--ease), color var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease);
 }
 .btn:hover{ background: var(--ink); color: var(--base); }
-.btn-ghost{ border-color: rgba(251,249,244,0.6); color: #FBF9F4; }
-.btn-ghost:hover{ background: #FBF9F4; color: var(--ink); }
 .btn-solid{ background: var(--ink); color: var(--base); }
 .btn-solid:hover{ background: var(--rose-deep); }
 
@@ -340,12 +346,15 @@ button{ font-family: inherit; cursor: pointer; }
 .placeholder.is-hidden{ display: none; }
 
 /* Real generated/sourced photography — same footprint as .placeholder so it
-   drops into any card/tile without layout changes. */
+   drops into any card/tile without layout changes. A shared filter pulls
+   photos from different sources (different AI models, real camera shots)
+   toward one warm-neutral grade so the set reads as a single shoot. */
 .real-photo{
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   transition: transform 1.2s var(--ease);
+  filter: saturate(0.88) contrast(1.06) brightness(0.97) sepia(0.06);
 }
 
 /* ==========================================================================
@@ -410,22 +419,59 @@ button{ font-family: inherit; cursor: pointer; }
 .pillars{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-4);
-  margin-top: var(--space-8);
-  padding-top: var(--space-6);
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
   border-top: 1px solid var(--line-brass);
 }
+.pillar{
+  padding-right: var(--space-4);
+  border-right: 1px solid var(--line);
+}
+.pillar:last-child{ border-right: none; padding-right: 0; }
 .pillar-label{
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: var(--rose);
   margin-bottom: 0.5em;
 }
-.pillar p{ font-size: 0.92rem; color: var(--stone); font-weight: 300; line-height: 1.55; }
+.pillar p{ font-size: 1rem; color: var(--stone); font-weight: 300; line-height: 1.6; max-width: 26ch; }
 
 @media (max-width: 880px){
-  .pillars{ grid-template-columns: repeat(2, 1fr); }
+  .pillars{ grid-template-columns: repeat(2, 1fr); row-gap: var(--space-6); }
+  .pillar:nth-child(2n){ border-right: none; padding-right: 0; }
+  .pillar:nth-child(n+3){ padding-top: var(--space-4); border-top: 1px solid var(--line); }
+}
+
+/* ==========================================================================
+   Statement — a single full-bleed breather between denser sections
+   ========================================================================== */
+.statement{
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.statement::after{
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(10,8,7,0.4);
+}
+.statement p{
+  position: relative;
+  z-index: 1;
+  max-width: 18ch;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.25;
+  color: #FBF9F4;
+  padding: 0 var(--space-4);
+  text-shadow: 0 4px 24px rgba(0,0,0,0.4);
 }
 
 /* ==========================================================================
@@ -463,7 +509,7 @@ button{ font-family: inherit; cursor: pointer; }
 .exp-card::after{
   content:"";
   position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(15,14,12,0.82) 0%, rgba(15,14,12,0.05) 55%);
+  background: linear-gradient(0deg, rgba(10,8,7,0.92) 0%, rgba(10,8,7,0.55) 32%, rgba(10,8,7,0.1) 62%, transparent 100%);
   z-index: 1;
 }
 .exp-card-body{
@@ -474,8 +520,8 @@ button{ font-family: inherit; cursor: pointer; }
   font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--brass-soft); margin-bottom: 0.5em; display: block;
 }
-.exp-card h3{ font-size: var(--fs-h3); color: #FBF9F4; margin-bottom: 0.4em; }
-.exp-card p{ font-size: 0.88rem; color: rgba(251,249,244,0.75); max-width: 34ch; font-weight: 300; }
+.exp-card h3{ font-size: var(--fs-h3); color: #FBF9F4; margin-bottom: 0.4em; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+.exp-card p{ font-size: 0.88rem; color: rgba(251,249,244,0.82); max-width: 34ch; font-weight: 300; text-shadow: 0 1px 8px rgba(0,0,0,0.45); }
 .exp-card--main p{ max-width: 46ch; }
 .exp-price{
   display: inline-block;
@@ -505,14 +551,22 @@ button{ font-family: inherit; cursor: pointer; }
    information here (an actual sequence), so a strip in date order is
    earned — unlike arbitrary 01/02/03 numbering on non-sequential content.
    ========================================================================== */
-.season{ padding: var(--space-12) 0; background: var(--base); }
+.season{ padding: var(--space-6) 0 var(--space-8); background: var(--base); }
+.season-intro{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+.season-intro .eyebrow{ margin-bottom: 0; }
 .season-strip{
   display: flex;
   gap: 0;
   overflow-x: auto;
   scroll-snap-type: x proximity;
   padding-bottom: var(--space-2);
-  margin-top: var(--space-2);
 }
 .season-item{
   scroll-snap-align: start;
@@ -545,7 +599,6 @@ button{ font-family: inherit; cursor: pointer; }
 .season-strip::-webkit-scrollbar-thumb{ background: var(--line-brass); }
 .season-cta{
   display: inline-flex;
-  margin-top: var(--space-3);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   color: var(--rose-deep);
@@ -567,14 +620,13 @@ button{ font-family: inherit; cursor: pointer; }
 
 .gallery-grid{
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 110px;
-  grid-auto-flow: dense;
-  gap: var(--space-2);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
 }
 .gallery-item{
   position: relative;
   overflow: hidden;
+  aspect-ratio: 4 / 5;
   border: none;
   padding: 0;
   margin: 0;
@@ -622,23 +674,8 @@ button{ font-family: inherit; cursor: pointer; }
   color: rgba(251,249,244,0.85); font-weight: 500;
 }
 
-.g-1{ grid-column: span 6; grid-row: span 3; }
-.g-2{ grid-column: span 3; grid-row: span 2; }
-.g-3{ grid-column: span 3; grid-row: span 2; }
-.g-4{ grid-column: span 4; grid-row: span 2; }
-.g-5{ grid-column: span 4; grid-row: span 2; }
-.g-6{ grid-column: span 4; grid-row: span 2; }
-.g-7{ grid-column: span 3; grid-row: span 2; }
-.g-8{ grid-column: span 5; grid-row: span 2; }
-.g-9{ grid-column: span 4; grid-row: span 2; }
-.g-10{ grid-column: span 3; grid-row: span 2; }
-.g-11{ grid-column: span 4; grid-row: span 2; }
-.g-12{ grid-column: span 5; grid-row: span 2; }
-
 @media (max-width: 880px){
-  .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
-  .g-1,.g-2,.g-3,.g-4,.g-5,.g-6,.g-7,.g-8,.g-9,.g-10,.g-11,.g-12{ grid-column: span 1; grid-row: span 2; }
-  .g-1{ grid-column: span 2; grid-row: span 3; }
+  .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ---------- lightbox ---------- */
@@ -671,10 +708,10 @@ button{ font-family: inherit; cursor: pointer; }
 .journal{ padding: var(--space-12) 0; background: var(--base); }
 .bento{
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 110px;
-  gap: var(--space-2);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
 }
+.bento-item{ aspect-ratio: 4 / 5; }
 .bento-item{ position: relative; overflow: hidden; }
 .bento-item .placeholder{ position: absolute; inset: 0; }
 .bento-item .placeholder{ background: linear-gradient(150deg, #e8cba9 0%, #d3a877 100%); }
@@ -687,62 +724,49 @@ button{ font-family: inherit; cursor: pointer; }
 .bento-item::after{
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(15,14,12,0.6) 0%, transparent 50%);
+  background: linear-gradient(0deg, rgba(10,8,7,0.82) 0%, rgba(10,8,7,0.3) 35%, transparent 60%);
   z-index: 1;
   pointer-events: none;
 }
 .bento-tag{
   position: absolute; z-index: 2; left: var(--space-2); bottom: var(--space-2);
   font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(251,249,244,0.9); font-weight: 600;
+  color: rgba(251,249,244,0.92); font-weight: 600;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
 }
 
-.b-1{ grid-column: span 5; grid-row: span 3; }
-.b-2{ grid-column: span 3; grid-row: span 2; }
-.b-3{ grid-column: span 4; grid-row: span 2; }
-.b-4{ grid-column: span 3; grid-row: span 2; }
-.b-5{ grid-column: span 4; grid-row: span 2; }
-.b-6{ grid-column: span 5; grid-row: span 2; }
-.b-7{ grid-column: span 4; grid-row: span 2; }
-.b-8{ grid-column: span 3; grid-row: span 2; }
-
 @media (max-width: 880px){
-  .bento{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
-  .b-1,.b-2,.b-3,.b-4,.b-5,.b-6,.b-7,.b-8{ grid-column: span 1; grid-row: span 2; }
-  .b-1{ grid-column: span 2; grid-row: span 3; }
+  .bento{ grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ==========================================================================
    Community
    ========================================================================== */
 .community{ padding: var(--space-12) 0; background: var(--surface); }
-.quote-row{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+.quote-reserved{
   margin-top: var(--space-8);
-}
-.quote-card{
+  padding-top: var(--space-8);
   border-top: 1px solid var(--line-brass);
-  padding-top: var(--space-3);
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.quote-card p.q{
+.quote-mark{
+  display: block;
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: var(--rose);
+  line-height: 1;
+  margin-bottom: 0.2em;
+}
+.quote-reserved p{
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: var(--fs-quote);
   color: var(--stone);
-  line-height: 1.5;
+  line-height: 1.4;
 }
-.quote-card .q.pending{ color: var(--stone-quiet); font-size: 1rem; }
-.quote-attr{
-  margin-top: var(--space-3);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  color: var(--stone);
-}
-.quote-attr b{ color: var(--ink); font-weight: 600; display: block; font-family: var(--sans); }
-
-@media (max-width: 880px){ .quote-row{ grid-template-columns: 1fr; } }
 
 /* ==========================================================================
    Join / Membership — presented as an invitation, not a lead-gen form
@@ -835,7 +859,6 @@ button{ font-family: inherit; cursor: pointer; }
   .nav-toggle{ display: block; }
   .header-right .btn{ display: none; }
   .exp-grid{ gap: var(--space-2); }
-  .quote-row{ gap: var(--space-4); }
 }
 
 .mobile-nav{

@@ -33,6 +33,8 @@
       "manifesto.pillar4.label": "Aesthetic",
       "manifesto.pillar4.desc": "Every gathering made with care. Beauty here isn't decoration, it's part of the point.",
 
+      "statement.line": "The best moments rarely make the itinerary.",
+
       "experiences.eyebrow": "What we do",
       "experiences.heading": "Four ways in.",
       "experiences.lead": "Not a tour operator. Not a gym. A community that shows up for you, in four regular forms.",
@@ -103,12 +105,7 @@
       "community.eyebrow": "In their words",
       "community.heading": "Who's in the room.",
       "community.lead": "Founders, doctors, lawyers, creatives — women who don't need a trip, they need the right ones to take it with.",
-      "community.q1": "Real quote pending — to be replaced with an actual member testimonial once supplied.",
-      "community.q2": "Real quote pending — to be replaced with an actual member testimonial once supplied.",
-      "community.q3": "Real quote pending — to be replaced with an actual member testimonial once supplied.",
-      "community.a1": "<b>—</b> Member, Kyiv",
-      "community.a2": "<b>—</b> Member, Warsaw",
-      "community.a3": "<b>—</b> Member, Europe",
+      "community.reserved": "Their words, not ours — reserved for the members who'll share them.",
 
       "join.eyebrow": "Membership",
       "join.heading": "Request your invitation.",
@@ -154,6 +151,8 @@
       "manifesto.pillar3.desc": "Простір видихнути — між амбіціями, роботою і рештою повного життя.",
       "manifesto.pillar4.label": "Естетика",
       "manifesto.pillar4.desc": "Кожна зустріч продумана з турботою. Краса тут — не прикраса, а частина суті.",
+
+      "statement.line": "Найкращі миті рідко потрапляють у програму поїздки.",
 
       "experiences.eyebrow": "Чим ми живемо",
       "experiences.heading": "Чотири шляхи всередину.",
@@ -225,12 +224,7 @@
       "community.eyebrow": "Їхніми словами",
       "community.heading": "Хто в колі.",
       "community.lead": "Засновниці, лікарки, юристки, творчі жінки — ті, кому не потрібна поїздка, їм потрібні правильні супутниці для неї.",
-      "community.q1": "Реальна цитата очікується — буде замінена на справжній відгук учасниці.",
-      "community.q2": "Реальна цитата очікується — буде замінена на справжній відгук учасниці.",
-      "community.q3": "Реальна цитата очікується — буде замінена на справжній відгук учасниці.",
-      "community.a1": "<b>—</b> Учасниця, Київ",
-      "community.a2": "<b>—</b> Учасниця, Варшава",
-      "community.a3": "<b>—</b> Учасниця, Європа",
+      "community.reserved": "Це їхні слова, не наші — чекають на тих учасниць, що ними поділяться.",
 
       "join.eyebrow": "Членство",
       "join.heading": "Подай заявку на запрошення.",
@@ -294,10 +288,16 @@
   var header = document.getElementById("siteHeader");
   var heroHeight = function(){ var h = document.querySelector(".hero"); return h ? h.offsetHeight : 600; };
 
+  var headerCta = header.querySelector(".header-right .btn");
   function onScroll(){
     var y = window.scrollY || window.pageYOffset;
+    var dark = y < heroHeight() - 80;
     header.classList.toggle("is-scrolled", y > 40);
-    header.classList.toggle("is-hero-dark", y < heroHeight() - 80);
+    header.classList.toggle("is-hero-dark", dark);
+    if (headerCta){
+      headerCta.style.color = dark ? "#FBF9F4" : "#2B211C";
+      headerCta.style.borderColor = dark ? "rgba(251,249,244,0.6)" : "#2B211C";
+    }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
