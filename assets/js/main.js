@@ -78,6 +78,9 @@
       "journal.tag1": "Mykonos", "journal.tag2": "Santorini", "journal.tag3": "Stretch — Warsaw",
       "journal.tag4": "Stretch — Kyiv", "journal.tag5": "Maldives", "journal.tag6": "Milan &amp; Como",
       "journal.tag7": "Paris &amp; Étretat", "journal.tag8": "Tennis Club",
+      "journal.pending3": "Photo pending", "journal.pending4": "Photo pending",
+      "journal.pending5": "Photo pending", "journal.pending6": "Photo pending",
+      "journal.pending8": "Photo pending",
 
       "community.eyebrow": "In their words",
       "community.heading": "Who's in the room.",
@@ -179,6 +182,9 @@
       "journal.tag1": "Міконос", "journal.tag2": "Санторіні", "journal.tag3": "Stretch — Варшава",
       "journal.tag4": "Stretch — Київ", "journal.tag5": "Мальдіви", "journal.tag6": "Мілан &amp; Комо",
       "journal.tag7": "Париж &amp; Етрета", "journal.tag8": "Tennis Club",
+      "journal.pending3": "Фото очікується", "journal.pending4": "Фото очікується",
+      "journal.pending5": "Фото очікується", "journal.pending6": "Фото очікується",
+      "journal.pending8": "Фото очікується",
 
       "community.eyebrow": "Їхніми словами",
       "community.heading": "Хто в колі.",
