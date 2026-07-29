@@ -6,6 +6,7 @@
     en: {
       "nav.experiences": "Experiences",
       "nav.journal": "Journal",
+      "nav.gallery": "Gallery",
       "nav.community": "Community",
       "nav.join": "Request Invitation",
 
@@ -82,6 +83,23 @@
       "journal.pending5": "Photo pending", "journal.pending6": "Photo pending",
       "journal.pending8": "Photo pending",
 
+      "gallery.eyebrow": "Unfiltered",
+      "gallery.heading": "Watch the season.",
+      "gallery.lead": "Straight from the club's own reels and cameras — no script, no re-shoot. Tap anything to play.",
+      "gallery.cap1": "Arrival, by air",
+      "gallery.cap2": "Golden hour, Mykonos",
+      "gallery.cap3": "A closed-club kind of night",
+      "gallery.cap4": "Match point",
+      "gallery.cap5": "Details, always",
+      "gallery.cap6": "Toasting nothing in particular",
+      "gallery.cap7": "The whole point",
+      "gallery.cap8": "Last light",
+      "gallery.cap9": "En route to the next one",
+      "gallery.cap10": "Somewhere on the Riviera",
+      "gallery.cap11": "Under sail",
+      "gallery.cap12": "The view from up here",
+      "gallery.more": "More of this on Instagram →",
+
       "community.eyebrow": "In their words",
       "community.heading": "Who's in the room.",
       "community.lead": "Founders, doctors, lawyers, creatives — women who don't need a trip, they need the right ones to take it with.",
@@ -110,6 +128,7 @@
     ua: {
       "nav.experiences": "Формати",
       "nav.journal": "Журнал",
+      "nav.gallery": "Галерея",
       "nav.community": "Спільнота",
       "nav.join": "Подати заявку",
 
@@ -185,6 +204,23 @@
       "journal.pending3": "Фото очікується", "journal.pending4": "Фото очікується",
       "journal.pending5": "Фото очікується", "journal.pending6": "Фото очікується",
       "journal.pending8": "Фото очікується",
+
+      "gallery.eyebrow": "Без фільтрів",
+      "gallery.heading": "Дивись на сезон.",
+      "gallery.lead": "Прямо з рілсів і камер клубу — без сценарію, без перезйомки. Торкнись, щоб відтворити.",
+      "gallery.cap1": "Прибуття, повітрям",
+      "gallery.cap2": "Золота година, Міконос",
+      "gallery.cap3": "Ніч у дусі закритого клубу",
+      "gallery.cap4": "Матч-пойнт",
+      "gallery.cap5": "Деталі завжди мають значення",
+      "gallery.cap6": "Тост нізащо",
+      "gallery.cap7": "Заради цього все і затівалось",
+      "gallery.cap8": "Останнє світло",
+      "gallery.cap9": "По дорозі до наступної",
+      "gallery.cap10": "Десь на Рив'єрі",
+      "gallery.cap11": "Під вітрилом",
+      "gallery.cap12": "Вид згори",
+      "gallery.more": "Ще більше в Instagram →",
 
       "community.eyebrow": "Їхніми словами",
       "community.heading": "Хто в колі.",
@@ -295,6 +331,45 @@
   } else {
     revealEls.forEach(function(el){ el.classList.add("is-visible"); });
   }
+
+  /* ---------------- gallery lightbox ---------------- */
+  var lightbox = document.getElementById("lightbox");
+  var lightboxStage = document.getElementById("lightboxStage");
+  var lightboxClose = document.getElementById("lightboxClose");
+
+  function closeLightbox(){
+    lightbox.classList.remove("is-open");
+    lightboxStage.innerHTML = "";
+  }
+  function openLightbox(type, src){
+    lightboxStage.innerHTML = "";
+    var el;
+    if (type === "video"){
+      el = document.createElement("video");
+      el.src = src;
+      el.controls = true;
+      el.autoplay = true;
+      el.playsInline = true;
+    } else {
+      el = document.createElement("img");
+      el.src = src;
+      el.alt = "";
+    }
+    lightboxStage.appendChild(el);
+    lightbox.classList.add("is-open");
+  }
+  document.querySelectorAll(".gallery-item").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      openLightbox(btn.getAttribute("data-type"), btn.getAttribute("data-src"));
+    });
+  });
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function(e){
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape") closeLightbox();
+  });
 
   /* ---------------- invite form (static — no backend yet) ---------------- */
   var form = document.getElementById("inviteForm");

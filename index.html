@@ -52,11 +52,12 @@
 <a class="sr-only" href="#main">Skip to content</a>
 
 <header class="site-header is-hero-dark" id="siteHeader">
-  <div class="logo">LA VIE <span>CLUB</span></div>
+  <a href="#main" class="logo"><img src="img/logo.png" alt="La Vie Club"></a>
   <nav class="main-nav">
     <ul class="nav-links">
       <li><a class="nav-link" href="#experiences" data-i18n="nav.experiences">Experiences</a></li>
       <li><a class="nav-link" href="#journal" data-i18n="nav.journal">Journal</a></li>
+      <li><a class="nav-link" href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
       <li><a class="nav-link" href="#community" data-i18n="nav.community">Community</a></li>
     </ul>
   </nav>
@@ -74,6 +75,7 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="#experiences" data-i18n="nav.experiences">Experiences</a>
   <a href="#journal" data-i18n="nav.journal">Journal</a>
+  <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
   <a href="#community" data-i18n="nav.community">Community</a>
   <a href="#join" class="btn" data-i18n="nav.join">Request Invitation</a>
 </div>
@@ -170,7 +172,7 @@
         </article>
 
         <article class="exp-card exp-card--a reveal">
-          <div class="placeholder"><span class="placeholder-label" data-i18n="exp.stretch.photo">Photo pending — Stretch Club, Warsaw park</span></div>
+          <img class="real-photo" src="img/exp-stretch.jpg" alt="">
           <div class="exp-card-body">
             <span class="exp-eyebrow" data-i18n="exp.stretch.eyebrow">Stretch Club</span>
             <h3 data-i18n="exp.stretch.title">Every weekend, outdoors.</h3>
@@ -180,7 +182,7 @@
         </article>
 
         <article class="exp-card exp-card--b reveal">
-          <div class="placeholder"><span class="placeholder-label" data-i18n="exp.tennis.photo">Photo pending — Tennis Club</span></div>
+          <img class="real-photo" src="img/exp-tennis.jpg" alt="">
           <div class="exp-card-body">
             <span class="exp-eyebrow" data-i18n="exp.tennis.eyebrow">Tennis Club</span>
             <h3 data-i18n="exp.tennis.title">Just launched. Already full of regulars.</h3>
@@ -189,7 +191,7 @@
         </article>
 
         <article class="exp-card exp-card--c reveal">
-          <div class="placeholder"><span class="placeholder-label" data-i18n="exp.brunch.photo">Photo</span></div>
+          <img class="real-photo" src="img/exp-brunch.jpg" alt="">
           <div class="exp-card-body">
             <span class="exp-eyebrow" data-i18n="exp.brunch.eyebrow">Brunches</span>
             <h3 data-i18n="exp.brunch.title">The long table.</h3>
@@ -266,15 +268,94 @@
       <div class="bento">
         <div class="bento-item b-1 reveal"><img class="real-photo" src="img/journal-mykonos.jpg" alt=""><span class="bento-tag" data-i18n="journal.tag1">Mykonos</span></div>
         <div class="bento-item b-2 reveal"><img class="real-photo" src="img/journal-santorini.jpg" alt=""><span class="bento-tag" data-i18n="journal.tag2">Santorini</span></div>
-        <div class="bento-item b-3 reveal"><div class="placeholder"><span class="placeholder-label" data-i18n="journal.pending3">Photo pending</span></div><span class="bento-tag" data-i18n="journal.tag3">Stretch — Warsaw</span></div>
+        <div class="bento-item b-3 reveal"><img class="real-photo" src="img/exp-stretch.jpg" alt=""><span class="bento-tag" data-i18n="journal.tag3">Stretch — Warsaw</span></div>
         <div class="bento-item b-4 reveal"><div class="placeholder"><span class="placeholder-label" data-i18n="journal.pending4">Photo pending</span></div><span class="bento-tag" data-i18n="journal.tag4">Stretch — Kyiv</span></div>
-        <div class="bento-item b-5 reveal"><div class="placeholder"><span class="placeholder-label" data-i18n="journal.pending5">Photo pending</span></div><span class="bento-tag" data-i18n="journal.tag5">Maldives</span></div>
-        <div class="bento-item b-6 reveal"><div class="placeholder"><span class="placeholder-label" data-i18n="journal.pending6">Photo pending</span></div><span class="bento-tag" data-i18n="journal.tag6">Milan &amp; Como</span></div>
+        <div class="bento-item b-5 reveal"><img class="real-photo" src="img/journal-maldives.jpg" alt=""><span class="bento-tag" data-i18n="journal.tag5">Maldives</span></div>
+        <div class="bento-item b-6 reveal"><img class="real-photo" src="img/journal-milan-como.jpg" alt=""><span class="bento-tag" data-i18n="journal.tag6">Milan &amp; Como</span></div>
         <div class="bento-item b-7 reveal"><img class="real-photo" src="img/journal-paris-etretat.jpg" alt=""><span class="bento-tag" data-i18n="journal.tag7">Paris &amp; Étretat</span></div>
-        <div class="bento-item b-8 reveal"><div class="placeholder"><span class="placeholder-label" data-i18n="journal.pending8">Photo pending</span></div><span class="bento-tag" data-i18n="journal.tag8">Tennis Club</span></div>
+        <div class="bento-item b-8 reveal"><img class="real-photo" src="img/exp-tennis.jpg" alt=""><span class="bento-tag" data-i18n="journal.tag8">Tennis Club</span></div>
       </div>
     </div>
   </section>
+
+  <!-- ============================ GALLERY ============================ -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="gallery.eyebrow">Unfiltered</p>
+          <h2 data-i18n="gallery.heading">Watch the season.</h2>
+        </div>
+        <p class="lead" data-i18n="gallery.lead">Straight from the club's own reels and cameras — no script, no re-shoot. Tap anything to play.</p>
+      </div>
+
+      <a href="https://www.instagram.com/lavie__club/" target="_blank" rel="noopener" class="season-cta reveal" style="color:rgba(251,249,244,0.75);border-color:rgba(251,249,244,0.5);margin-bottom:var(--space-4);" data-i18n="gallery.more">More of this on Instagram →</a>
+
+      <div class="gallery-grid">
+        <button class="gallery-item g-1" data-type="video" data-src="img/video/helicopter.mp4" data-caption="gallery.cap1" type="button">
+          <video muted playsinline preload="metadata" src="img/video/helicopter.mp4#t=1"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap1">Arrival, by air</span>
+        </button>
+        <button class="gallery-item g-2" data-type="photo" data-src="img/moment-poolbar.jpg" data-caption="gallery.cap2" type="button">
+          <img class="real-photo" src="img/moment-poolbar.jpg" alt="">
+          <span class="gallery-tag" data-i18n="gallery.cap2">Golden hour, Mykonos</span>
+        </button>
+        <button class="gallery-item g-3" data-type="video" data-src="img/video/fireworks.mp4" data-caption="gallery.cap3" type="button">
+          <video muted playsinline preload="metadata" src="img/video/fireworks.mp4#t=2"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap3">A closed-club kind of night</span>
+        </button>
+        <button class="gallery-item g-4" data-type="video" data-src="img/video/tennis.mp4" data-caption="gallery.cap4" type="button">
+          <video muted playsinline preload="metadata" src="img/video/tennis.mp4#t=1"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap4">Match point</span>
+        </button>
+        <button class="gallery-item g-5" data-type="photo" data-src="img/moment-flatlay.jpg" data-caption="gallery.cap5" type="button">
+          <img class="real-photo" src="img/moment-flatlay.jpg" alt="">
+          <span class="gallery-tag" data-i18n="gallery.cap5">Details, always</span>
+        </button>
+        <button class="gallery-item g-6" data-type="video" data-src="img/video/champagne.mp4" data-caption="gallery.cap6" type="button">
+          <video muted playsinline preload="metadata" src="img/video/champagne.mp4#t=1"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap6">Toasting nothing in particular</span>
+        </button>
+        <button class="gallery-item g-7" data-type="photo" data-src="img/moment-embrace.jpg" data-caption="gallery.cap7" type="button">
+          <img class="real-photo" src="img/moment-embrace.jpg" alt="">
+          <span class="gallery-tag" data-i18n="gallery.cap7">The whole point</span>
+        </button>
+        <button class="gallery-item g-8" data-type="video" data-src="img/video/sunset-pool.mp4" data-caption="gallery.cap8" type="button">
+          <video muted playsinline preload="metadata" src="img/video/sunset-pool.mp4#t=1"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap8">Last light</span>
+        </button>
+        <button class="gallery-item g-9" data-type="photo" data-src="img/moment-speedboat.jpg" data-caption="gallery.cap9" type="button">
+          <img class="real-photo" src="img/moment-speedboat.jpg" alt="">
+          <span class="gallery-tag" data-i18n="gallery.cap9">En route to the next one</span>
+        </button>
+        <button class="gallery-item g-10" data-type="video" data-src="img/video/terrace.mp4" data-caption="gallery.cap10" type="button">
+          <video muted playsinline preload="metadata" src="img/video/terrace.mp4#t=1"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap10">Somewhere on the Riviera</span>
+        </button>
+        <button class="gallery-item g-11" data-type="video" data-src="img/video/sailing.mp4" data-caption="gallery.cap11" type="button">
+          <video muted playsinline preload="metadata" src="img/video/sailing.mp4#t=1"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap11">Under sail</span>
+        </button>
+        <button class="gallery-item g-12" data-type="video" data-src="img/video/helicopter-pov.mp4" data-caption="gallery.cap12" type="button">
+          <video muted playsinline preload="metadata" src="img/video/helicopter-pov.mp4#t=1"></video>
+          <span class="gallery-play" aria-hidden="true"></span>
+          <span class="gallery-tag" data-i18n="gallery.cap12">The view from up here</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close" type="button">&times;</button>
+    <div class="lightbox-stage" id="lightboxStage"></div>
+  </div>
 
   <hr class="horizon ink">
 
@@ -354,7 +435,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">LA VIE <span>CLUB</span></div>
+        <div class="footer-logo"><img src="img/logo.png" alt="La Vie Club"></div>
         <p class="footer-tag" data-i18n="footer.tag">A women's club for travel, movement and belonging. Kyiv · Warsaw · Europe.</p>
       </div>
       <div class="footer-col">
@@ -362,6 +443,7 @@
         <ul>
           <li><a href="#experiences" data-i18n="nav.experiences">Experiences</a></li>
           <li><a href="#journal" data-i18n="nav.journal">Journal</a></li>
+          <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
           <li><a href="#community" data-i18n="nav.community">Community</a></li>
           <li><a href="#join" data-i18n="nav.join">Request Invitation</a></li>
         </ul>
