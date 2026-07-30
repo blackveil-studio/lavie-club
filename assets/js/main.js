@@ -40,21 +40,25 @@
       "experiences.lead": "Not a tour operator. Not a gym. A community that shows up for you, in four regular forms.",
 
       "exp.trips.photo": "Photo pending — Mykonos, girls trip",
+      "exp.trips.alt": "La Vie Club members on a girls trip to Mykonos",
       "exp.trips.eyebrow": "Girls Trips",
       "exp.trips.title": "A season of escapes.",
       "exp.trips.desc": "Maldives, Mykonos, Santorini, Milan &amp; Como, Paris, Courchevel — a full calendar across the year, villas and private drivers included, plus intimate off-calendar trips with only a few seats.",
       "exp.trips.price": "From €1,950 per trip",
 
       "exp.stretch.eyebrow": "Stretch Club",
+      "exp.stretch.alt": "Stretch Club outdoor session in a Warsaw park",
       "exp.stretch.title": "Every weekend, outdoors.",
       "exp.stretch.desc": "Morning and evening sessions in the parks of Warsaw and Kyiv — mats provided, every level welcome.",
       "exp.stretch.price": "30 zł per session",
 
       "exp.tennis.eyebrow": "Tennis Club",
+      "exp.tennis.alt": "La Vie Club Tennis Club match",
       "exp.tennis.title": "Just launched. Already full of regulars.",
       "exp.tennis.desc": "A closed weekly court club in Warsaw and Kyiv, open to beginners and players alike.",
 
       "exp.brunch.eyebrow": "Brunches",
+      "exp.brunch.alt": "La Vie Club brunch table",
       "exp.brunch.title": "The long table.",
       "exp.brunch.desc": "Conversation that runs long, on purpose.",
 
@@ -79,24 +83,42 @@
       "journal.tag1": "Mykonos", "journal.tag2": "Santorini", "journal.tag3": "Stretch — Warsaw",
       "journal.tag4": "Stretch — Kyiv", "journal.tag5": "Maldives", "journal.tag6": "Milan &amp; Como",
       "journal.tag7": "Paris &amp; Étretat", "journal.tag8": "Tennis Club",
+      "journal.alt1": "La Vie Club trip to Mykonos",
+      "journal.alt2": "La Vie Club trip to Santorini",
+      "journal.alt3": "Stretch Club session in Warsaw",
+      "journal.alt4": "Stretch Club session in Kyiv",
+      "journal.alt5": "La Vie Club trip to the Maldives",
+      "journal.alt6": "La Vie Club trip to Milan and Lake Como",
+      "journal.alt7": "La Vie Club trip to Paris and Étretat",
+      "journal.alt8": "La Vie Club Tennis Club",
+      "journal.dispatch1": "Dispatch No. 01", "journal.dispatch2": "Dispatch No. 02",
+      "journal.dispatch3": "Dispatch No. 03", "journal.dispatch4": "Dispatch No. 04",
+      "journal.dispatch5": "Dispatch No. 05", "journal.dispatch6": "Dispatch No. 06",
+      "journal.dispatch7": "Dispatch No. 07", "journal.dispatch8": "Dispatch No. 08",
 
       "gallery.eyebrow": "Unfiltered",
       "gallery.heading": "Watch the season.",
       "gallery.lead": "Straight from the club's own reels and cameras — no script, no re-shoot. Tap anything to play.",
       "gallery.cap1": "Arrival, by air",
       "gallery.cap2": "Golden hour, Mykonos",
+      "gallery.alt2": "Golden hour on a La Vie Club trip to Mykonos",
       "gallery.cap3": "A closed-club kind of night",
       "gallery.cap4": "Match point",
       "gallery.cap5": "Details, always",
+      "gallery.alt5": "Details from a La Vie Club trip",
       "gallery.cap6": "Toasting nothing in particular",
       "gallery.cap7": "The whole point",
+      "gallery.alt7": "La Vie Club members embracing",
       "gallery.cap8": "Last light",
       "gallery.cap9": "En route to the next one",
+      "gallery.alt9": "La Vie Club members on a speedboat",
       "gallery.cap10": "Somewhere on the Riviera",
       "gallery.cap11": "Under sail",
       "gallery.cap12": "The view from up here",
       "gallery.cap13": "Coffee first",
+      "gallery.alt13": "Coffee by the pool on a La Vie Club trip",
       "gallery.cap14": "Golden hour, always",
+      "gallery.alt14": "Golden hour with La Vie Club",
       "gallery.more": "More of this on Instagram →",
 
       "community.eyebrow": "In their words",
@@ -121,6 +143,7 @@
 
       "footer.tag": "A women's club for travel, movement and belonging. Kyiv · Warsaw · Europe.",
       "footer.explore": "Explore", "footer.connect": "Connect", "footer.based": "Based in",
+      "footer.destinations": "2026 Destinations",
       "footer.rights": "All rights reserved"
     },
     ua: {
@@ -160,21 +183,25 @@
       "experiences.lead": "Не туристична агенція. Не фітнес-клуб. Спільнота, яка підтримує тебе у чотирьох постійних форматах.",
 
       "exp.trips.photo": "Фото очікується — Міконос, girls trip",
+      "exp.trips.alt": "Учасниці La Vie Club у поїздці на Міконос",
       "exp.trips.eyebrow": "Girls Trips",
       "exp.trips.title": "Сезон утеч.",
       "exp.trips.desc": "Мальдіви, Міконос, Санторіні, Мілан &amp; Комо, Париж, Куршевель — повний календар на весь рік, з віллами й приватним водієм, плюс камерні позапланові поїздки на кілька місць.",
       "exp.trips.price": "Від 1950€ за поїздку",
 
       "exp.stretch.eyebrow": "Stretch Club",
+      "exp.stretch.alt": "Заняття Stretch Club у парку Варшави",
       "exp.stretch.title": "Щовихідних, просто неба.",
       "exp.stretch.desc": "Ранкові й вечірні заняття у парках Варшави та Києва — килимки надаємо, будь-який рівень підготовки.",
       "exp.stretch.price": "30 злотих за заняття",
 
       "exp.tennis.eyebrow": "Tennis Club",
+      "exp.tennis.alt": "Матч Tennis Club La Vie Club",
       "exp.tennis.title": "Щойно відкрили. Вже свій постійний склад.",
       "exp.tennis.desc": "Закритий щотижневий тенісний клуб у Варшаві та Києві — для новачків і тих, хто вже грає.",
 
       "exp.brunch.eyebrow": "Бранчі",
+      "exp.brunch.alt": "Бранч La Vie Club",
       "exp.brunch.title": "Довгий стіл.",
       "exp.brunch.desc": "Розмова, що триває довго. Свідомо.",
 
@@ -199,24 +226,42 @@
       "journal.tag1": "Міконос", "journal.tag2": "Санторіні", "journal.tag3": "Stretch — Варшава",
       "journal.tag4": "Stretch — Київ", "journal.tag5": "Мальдіви", "journal.tag6": "Мілан &amp; Комо",
       "journal.tag7": "Париж &amp; Етрета", "journal.tag8": "Tennis Club",
+      "journal.alt1": "Поїздка La Vie Club на Міконос",
+      "journal.alt2": "Поїздка La Vie Club на Санторіні",
+      "journal.alt3": "Заняття Stretch Club у Варшаві",
+      "journal.alt4": "Заняття Stretch Club у Києві",
+      "journal.alt5": "Поїздка La Vie Club на Мальдіви",
+      "journal.alt6": "Поїздка La Vie Club до Мілана і Комо",
+      "journal.alt7": "Поїздка La Vie Club до Парижа і Етрета",
+      "journal.alt8": "Tennis Club La Vie Club",
+      "journal.dispatch1": "Депеша №01", "journal.dispatch2": "Депеша №02",
+      "journal.dispatch3": "Депеша №03", "journal.dispatch4": "Депеша №04",
+      "journal.dispatch5": "Депеша №05", "journal.dispatch6": "Депеша №06",
+      "journal.dispatch7": "Депеша №07", "journal.dispatch8": "Депеша №08",
 
       "gallery.eyebrow": "Без фільтрів",
       "gallery.heading": "Дивись на сезон.",
       "gallery.lead": "Прямо з рілсів і камер клубу — без сценарію, без перезйомки. Торкнись, щоб відтворити.",
       "gallery.cap1": "Прибуття, повітрям",
       "gallery.cap2": "Золота година, Міконос",
+      "gallery.alt2": "Золота година в поїздці La Vie Club на Міконос",
       "gallery.cap3": "Ніч у дусі закритого клубу",
       "gallery.cap4": "Матч-пойнт",
       "gallery.cap5": "Деталі завжди мають значення",
+      "gallery.alt5": "Деталі поїздки La Vie Club",
       "gallery.cap6": "Тост нізащо",
       "gallery.cap7": "Заради цього все і затівалось",
+      "gallery.alt7": "Учасниці La Vie Club обіймаються",
       "gallery.cap8": "Останнє світло",
       "gallery.cap9": "По дорозі до наступної",
+      "gallery.alt9": "Учасниці La Vie Club на швидкісному катері",
       "gallery.cap10": "Десь на Рив'єрі",
       "gallery.cap11": "Під вітрилом",
       "gallery.cap12": "Вид згори",
       "gallery.cap13": "Спершу кава",
+      "gallery.alt13": "Кава біля басейну в поїздці La Vie Club",
       "gallery.cap14": "Золота година, завжди",
+      "gallery.alt14": "Золота година з La Vie Club",
       "gallery.more": "Ще більше в Instagram →",
 
       "community.eyebrow": "Їхніми словами",
@@ -241,6 +286,7 @@
 
       "footer.tag": "Жіночий клуб для подорожей, руху і належності. Київ · Варшава · Європа.",
       "footer.explore": "Розділи", "footer.connect": "Зв'язок", "footer.based": "Базуємось у",
+      "footer.destinations": "Напрямки 2026",
       "footer.rights": "Усі права захищено"
     }
   };
@@ -259,6 +305,10 @@
       } else {
         el.innerHTML = dict[key];
       }
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function(el){
+      var key = el.getAttribute("data-i18n-alt");
+      if (dict[key] !== undefined) el.setAttribute("alt", dict[key]);
     });
     document.querySelectorAll(".lang-toggle button").forEach(function(btn){
       btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
