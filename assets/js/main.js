@@ -127,6 +127,7 @@
       "community.heading": "Who's in the room.",
       "community.lead": "Founders, doctors, lawyers, creatives — women who don't need a trip, they need the right ones to take it with.",
       "community.role1": "Founders", "community.role2": "Doctors", "community.role3": "Lawyers", "community.role4": "Creatives",
+      "community.photoAlt": "La Vie Club members embracing",
       "community.quote1": "I came for the trips. I stayed for the group chat that never goes quiet.",
       "community.name1": "Oksana, Kyiv",
       "community.quote2": "Stretch Club is the only thing that gets me out of bed before an 8am client call.",
@@ -299,6 +300,7 @@
       "community.heading": "Хто в колі.",
       "community.lead": "Засновниці, лікарки, юристки, творчі жінки — ті, кому не потрібна поїздка, їм потрібні правильні супутниці для неї.",
       "community.role1": "Засновниці", "community.role2": "Лікарки", "community.role3": "Юристки", "community.role4": "Творчі жінки",
+      "community.photoAlt": "Учасниці La Vie Club обіймаються",
       "community.quote1": "Я прийшла заради поїздок. Залишилась заради чату, який ніколи не змовкає.",
       "community.name1": "Оксана, Київ",
       "community.quote2": "Stretch Club — єдине, що піднімає мене з ліжка до дзвінка з клієнтом о восьмій ранку.",
@@ -419,7 +421,6 @@
 
   /* ---------------- header state on scroll ---------------- */
   var header = document.getElementById("siteHeader");
-  var headerCta = header.querySelector(".header-right .btn");
   var hasHero = !!document.querySelector(".hero");
   function onScroll(){
     if (!hasHero) return; // content pages (e.g. privacy.html) have no dark hero to contrast against
@@ -428,10 +429,6 @@
     var dark = !scrolled;
     header.classList.toggle("is-scrolled", scrolled);
     header.classList.toggle("is-hero-dark", dark);
-    if (headerCta){
-      headerCta.style.color = dark ? "#FBF9F4" : "#2C221E";
-      headerCta.style.borderColor = dark ? "rgba(251,249,244,0.6)" : "#2C221E";
-    }
   }
   if (hasHero){
     window.addEventListener("scroll", onScroll, { passive: true });
