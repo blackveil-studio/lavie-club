@@ -4,6 +4,8 @@
   /* ---------------- i18n dictionary ---------------- */
   var translations = {
     en: {
+      "cookie.text": "This site uses local storage only to remember your language preference — no tracking, no third-party cookies. See our <a href=\"privacy.html\">Privacy Policy</a>.",
+      "cookie.accept": "Got it",
       "nav.experiences": "Experiences",
       "nav.journal": "Journal",
       "nav.gallery": "Gallery",
@@ -144,9 +146,33 @@
       "footer.tag": "A women's club for travel, movement and belonging. Kyiv · Warsaw · Europe.",
       "footer.explore": "Explore", "footer.connect": "Connect", "footer.based": "Based in",
       "footer.destinations": "2026 Destinations",
-      "footer.rights": "All rights reserved"
+      "footer.privacy": "Privacy Policy",
+      "footer.rights": "All rights reserved",
+
+      "privacy.eyebrow": "Legal",
+      "privacy.heading": "Privacy Policy",
+      "privacy.updated": "Last updated: July 2026",
+      "privacy.intro": "La Vie Club (\"we\", \"us\", \"our club\") respects your privacy. This page explains what information we collect when you use this website, why we collect it, and what choices you have.",
+      "privacy.h1": "What we collect",
+      "privacy.p1": "When you submit the invitation request form, we collect the information you choose to provide: your name, city, email address, the area you're most drawn to (Girls Trips, Stretch Club, Tennis Club or Brunches), and anything you share in the \"a little about you\" field. We don't collect payment or financial information through this site.",
+      "privacy.h2": "Local storage, not tracking cookies",
+      "privacy.p2": "This site stores one small piece of information in your browser's local storage: your language preference (English or Ukrainian), so you don't have to reselect it on your next visit. We also remember, in the same way, that you've seen this notice. We do not use tracking cookies, advertising pixels, or third-party analytics on this site. If that changes in the future, we'll update this policy and ask for your consent where required.",
+      "privacy.h3": "How we use your information",
+      "privacy.p3": "We use the details from your invitation request to respond to you, to understand which experiences you're interested in, and to invite you into the right trip, session or match. We don't sell your information to anyone, and we don't share it with third parties for their own marketing purposes.",
+      "privacy.h4": "Instagram and Telegram",
+      "privacy.p4": "Links on this site lead to our Instagram and Telegram — both are independent platforms with their own privacy policies. Anything you share with us directly on those platforms (a message, a comment) is governed by their terms, not this page.",
+      "privacy.h5": "How long we keep it",
+      "privacy.p5": "We keep invitation request details for as long as needed to respond to you and, if you join, for the duration of your membership with the club. You can ask us to delete your information at any time — see \"Your rights\" below.",
+      "privacy.h6": "Your rights",
+      "privacy.p6": "You can ask us what information we hold about you, ask us to correct it, or ask us to delete it. To do any of this, message us directly on Telegram or Instagram — links are in the footer of this site.",
+      "privacy.h7": "Who this applies to",
+      "privacy.p7": "This site isn't directed at children, and we don't knowingly collect information from anyone under 16.",
+      "privacy.h8": "Changes to this policy",
+      "privacy.p8": "If we change how we collect or use information, we'll update this page and change the date at the top."
     },
     ua: {
+      "cookie.text": "Цей сайт використовує локальне сховище лише для запам'ятовування мови інтерфейсу — без відстеження, без сторонніх cookie. Детальніше в <a href=\"privacy.html\">Політиці конфіденційності</a>.",
+      "cookie.accept": "Зрозуміло",
       "nav.experiences": "Формати",
       "nav.journal": "Журнал",
       "nav.gallery": "Галерея",
@@ -287,7 +313,29 @@
       "footer.tag": "Жіночий клуб для подорожей, руху і належності. Київ · Варшава · Європа.",
       "footer.explore": "Розділи", "footer.connect": "Зв'язок", "footer.based": "Базуємось у",
       "footer.destinations": "Напрямки 2026",
-      "footer.rights": "Усі права захищено"
+      "footer.privacy": "Політика конфіденційності",
+      "footer.rights": "Усі права захищено",
+
+      "privacy.eyebrow": "Правова інформація",
+      "privacy.heading": "Політика конфіденційності",
+      "privacy.updated": "Оновлено: липень 2026",
+      "privacy.intro": "La Vie Club (\"ми\", \"наш клуб\") поважає вашу приватність. Ця сторінка пояснює, яку інформацію ми збираємо, коли ви користуєтесь цим сайтом, навіщо ми її збираємо і який у вас є вибір.",
+      "privacy.h1": "Що ми збираємо",
+      "privacy.p1": "Коли ви надсилаєте заявку на запрошення, ми отримуємо інформацію, яку ви вирішили надати: ім'я, місто, електронну адресу, напрямок, який вас найбільше приваблює (Girls Trips, Stretch Club, Tennis Club або Бранчі), а також усе, що ви вкажете в полі \"трохи про тебе\". Ми не збираємо платіжну чи фінансову інформацію через цей сайт.",
+      "privacy.h2": "Локальне сховище, а не трекінгові cookie",
+      "privacy.p2": "Цей сайт зберігає в локальному сховищі браузера лише одну невелику деталь: вашу мовну перевагу (англійська чи українська), щоб не доводилось обирати її щоразу заново. Так само ми запам'ятовуємо, що ви вже бачили цю сповіщення. Ми не використовуємо трекінгові cookie, рекламні піксели чи сторонню аналітику на цьому сайті. Якщо це зміниться в майбутньому, ми оновимо цю політику і запитаємо вашу згоду там, де це потрібно.",
+      "privacy.h3": "Як ми використовуємо вашу інформацію",
+      "privacy.p3": "Ми використовуємо дані з вашої заявки, щоб відповісти вам, зрозуміти, які формати вас цікавлять, і запросити вас у правильну поїздку, заняття чи матч. Ми не продаємо вашу інформацію нікому і не передаємо її третім сторонам для їхніх власних маркетингових цілей.",
+      "privacy.h4": "Instagram та Telegram",
+      "privacy.p4": "Посилання на цьому сайті ведуть до нашого Instagram та Telegram — обидві платформи незалежні і мають власні політики конфіденційності. Усе, чим ви ділитесь з нами безпосередньо на цих платформах (повідомлення, коментар), регулюється їхніми умовами, а не цією сторінкою.",
+      "privacy.h5": "Як довго ми зберігаємо дані",
+      "privacy.p5": "Ми зберігаємо дані заявки стільки, скільки потрібно, щоб відповісти вам, а якщо ви приєднаєтесь — протягом усього часу вашого членства в клубі. Ви можете попросити видалити вашу інформацію в будь-який момент — див. \"Ваші права\" нижче.",
+      "privacy.h6": "Ваші права",
+      "privacy.p6": "Ви можете запитати, яку інформацію про вас ми зберігаємо, попросити її виправити або видалити. Для цього напишіть нам напряму в Telegram чи Instagram — посилання внизу сторінки.",
+      "privacy.h7": "Кого це стосується",
+      "privacy.p7": "Цей сайт не призначений для дітей, і ми свідомо не збираємо інформацію від осіб молодших 16 років.",
+      "privacy.h8": "Зміни до цієї політики",
+      "privacy.p8": "Якщо ми змінимо спосіб збору чи використання інформації, ми оновимо цю сторінку і змінимо дату вгорі."
     }
   };
 
@@ -315,9 +363,32 @@
     });
   }
 
+  function storageGet(key){
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  }
+  function storageSet(key, value){
+    try { localStorage.setItem(key, value); } catch (e) { /* storage unavailable — degrade silently */ }
+  }
+
   document.querySelectorAll(".lang-toggle button").forEach(function(btn){
-    btn.addEventListener("click", function(){ applyLang(btn.getAttribute("data-lang")); });
+    btn.addEventListener("click", function(){
+      applyLang(btn.getAttribute("data-lang"));
+      storageSet("lvc_lang", btn.getAttribute("data-lang"));
+    });
   });
+
+  /* ---------------- cookie notice — discloses the one real local-storage use above ---------------- */
+  var cookieNotice = document.getElementById("cookieNotice");
+  var cookieAccept = document.getElementById("cookieAccept");
+  if (cookieNotice && cookieAccept){
+    if (!storageGet("lvc_cookie_ack")){
+      cookieNotice.classList.add("is-visible");
+    }
+    cookieAccept.addEventListener("click", function(){
+      storageSet("lvc_cookie_ack", "1");
+      cookieNotice.classList.remove("is-visible");
+    });
+  }
 
   /* ---------------- hero video (falls back to placeholder if no file yet) ---------------- */
   var heroVideo = document.getElementById("heroVideo");
@@ -339,7 +410,9 @@
   /* ---------------- header state on scroll ---------------- */
   var header = document.getElementById("siteHeader");
   var headerCta = header.querySelector(".header-right .btn");
+  var hasHero = !!document.querySelector(".hero");
   function onScroll(){
+    if (!hasHero) return; // content pages (e.g. privacy.html) have no dark hero to contrast against
     var y = window.scrollY || window.pageYOffset;
     var scrolled = y > 40;
     var dark = !scrolled;
@@ -350,8 +423,10 @@
       headerCta.style.borderColor = dark ? "rgba(251,249,244,0.6)" : "#2C221E";
     }
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  if (hasHero){
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 
   /* ---------------- mobile nav ---------------- */
   var navToggle = document.getElementById("navToggle");
@@ -503,5 +578,5 @@
     });
   }
 
-  applyLang("en");
+  applyLang(storageGet("lvc_lang") === "ua" ? "ua" : "en");
 })();

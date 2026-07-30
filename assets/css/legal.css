@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Legal / content pages (privacy policy, etc.) — same tokens as the main
+   site, but set for long-form reading rather than editorial display.
+   ========================================================================== */
+.legal{
+  padding: calc(var(--space-16) + 3rem) 0 var(--space-16);
+  background: var(--base);
+  min-height: 60vh;
+}
+.legal-wrap{ max-width: 68ch; }
+.legal h1{
+  font-size: var(--fs-h2);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.legal-updated{
+  font-size: 0.8rem;
+  color: var(--stone-quiet);
+  margin-bottom: var(--space-8);
+}
+.legal h2{
+  font-size: 1.5rem;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-2);
+}
+.legal p{
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--stone);
+  font-weight: 300;
+}
+.legal p + h2{ margin-top: var(--space-8); }
+.legal a{ color: var(--rose-deep); text-decoration: underline; text-underline-offset: 2px; }
