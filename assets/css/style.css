@@ -19,7 +19,6 @@
   --aegean:      #3E5A63;   /* sea — rare grounding accent, used sparingly */
   --brass:       #B4884A;   /* antique brass — hairlines, labels, metal */
   --brass-soft:  #E7C79A;   /* pale brass for dark backgrounds */
-  --wine:        #6B2E2E;   /* rare accent — single emphasised words only */
   --deep:        #1E1412;   /* rich near-black chocolate — dark sections, used sparingly */
   --deep-2:      #120B0A;
   --line:        rgba(44,34,30,0.12);
@@ -33,7 +32,6 @@
   --fs-lead:    clamp(1.125rem, 1.4vw, 1.375rem);
   --fs-h1:      clamp(2.6rem, 6.4vw, 5.75rem);
   --fs-h2:      clamp(2rem, 4.4vw, 3.4rem);
-  --fs-h3:      clamp(1.3rem, 2vw, 1.7rem);
   --fs-quote:   clamp(1.4rem, 2.6vw, 2.15rem);
 
   --space-1: 0.5rem;
@@ -44,7 +42,6 @@
   --space-8: 4rem;
   --space-12: 6rem;
   --space-16: 8rem;
-  --space-24: 12rem;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-s: 0.4s;
@@ -116,7 +113,6 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .italic{ font-style: italic; }
 .accent{ color: var(--rose); }
-.accent-wine{ color: var(--wine); }
 
 /* ---------- Horizon rule — the signature motif ----------
    A thin line recurs at the seam of every section, shifting tone
@@ -564,16 +560,8 @@ button{ font-family: inherit; cursor: pointer; }
    information here (an actual sequence), so a strip in date order is
    earned — unlike arbitrary 01/02/03 numbering on non-sequential content.
    ========================================================================== */
-.season{ padding: var(--space-6) 0 var(--space-8); background: var(--base); }
-.season-intro{
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
-  flex-wrap: wrap;
-}
-.season-intro .eyebrow{ margin-bottom: 0; }
+.season{ padding: var(--space-12) 0 var(--space-8); background: var(--base); }
+.season-intro{ margin-top: calc(-1 * var(--space-4)); margin-bottom: var(--space-4); }
 .season-strip{
   display: flex;
   gap: 0;
@@ -747,8 +735,7 @@ button{ font-family: inherit; cursor: pointer; }
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-3);
 }
-.bento-item{ aspect-ratio: 5 / 4; }
-.bento-item{ position: relative; overflow: hidden; }
+.bento-item{ aspect-ratio: 5 / 4; position: relative; overflow: hidden; }
 .bento-item .placeholder{ position: absolute; inset: 0; }
 .bento-item .placeholder{ background: linear-gradient(150deg, #e8cba9 0%, #d3a877 100%); }
 .bento-item:nth-child(3n+1) .placeholder{ background: linear-gradient(150deg, #3e5a63 0%, #22343a 100%); }
@@ -832,6 +819,23 @@ button{ font-family: inherit; cursor: pointer; }
 .join .eyebrow::before{ background: var(--brass-soft); }
 .join h2{ font-size: var(--fs-h2); margin-top: var(--space-3); color: #FBF9F4; max-width: 14ch; }
 .join-sub{ margin-top: var(--space-4); color: rgba(251,249,244,0.72); max-width: 40ch; font-size: var(--fs-lead); font-weight: 300; }
+.join-rules{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9em 1.4em;
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(251,249,244,0.16);
+  max-width: 40ch;
+}
+.join-rules li{
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass-soft);
+  font-weight: 600;
+}
 
 .invite-form{ display: flex; flex-direction: column; gap: var(--space-4); }
 .field{ display: flex; flex-direction: column; gap: 0.5em; }
