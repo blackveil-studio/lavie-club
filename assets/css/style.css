@@ -522,15 +522,16 @@ button{ font-family: inherit; cursor: pointer; }
 
 .exp-grid{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 }
 .exp-card{
   position: relative;
   overflow: hidden;
   color: #FBF9F4;
-  aspect-ratio: 6 / 5;
 }
+.exp-card--main{ grid-column: 1 / 4; aspect-ratio: 21 / 8; }
+.exp-card--a, .exp-card--b, .exp-card--c{ aspect-ratio: 4 / 5; }
 .exp-card .placeholder{ position: absolute; inset: 0; background: linear-gradient(160deg, #a8664f 0%, #3a201a 100%); }
 .exp-card:nth-child(2) .placeholder{ background: linear-gradient(160deg, #7c7a4f 0%, #2e2c1c 100%); }
 .exp-card:nth-child(3) .placeholder{ background: linear-gradient(160deg, #8a6446 0%, #3a2818 100%); }
@@ -564,10 +565,26 @@ button{ font-family: inherit; cursor: pointer; }
 .exp-card .placeholder{ transition: transform 1.4s var(--ease); }
 .exp-card:hover .placeholder,
 .exp-card:hover .real-photo{ transform: scale(1.045); }
+.exp-card-arrow{
+  position: absolute; z-index: 2; top: var(--space-4); right: var(--space-4);
+  width: 34px; height: 34px;
+  border: 1px solid rgba(251,249,244,0.4);
+  border-radius: 50%;
+  opacity: 0; transform: translate(6px, -6px);
+  transition: opacity var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);
+}
+.exp-card-arrow::before{
+  content: "→";
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: #FBF9F4; font-size: 0.95rem;
+}
+.exp-card:hover .exp-card-arrow{ opacity: 1; transform: translate(0, 0); }
 
 @media (max-width: 880px){
   .exp-grid{ grid-template-columns: 1fr; }
-  .exp-card{ aspect-ratio: 4 / 5; }
+  .exp-card--main{ grid-column: 1 / 2; aspect-ratio: 4 / 5; }
+  .exp-card--a, .exp-card--b, .exp-card--c{ aspect-ratio: 4 / 5; }
 }
 
 /* ==========================================================================
@@ -781,10 +798,24 @@ button{ font-family: inherit; cursor: pointer; }
    Community
    ========================================================================== */
 .community{ padding: var(--space-12) 0; background: var(--surface); }
+.community-roles{
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--line);
+}
+.community-roles li{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--stone);
+}
+.community-roles li::before{ content: "— "; color: var(--rose); font-style: normal; }
 .quote-reserved{
   margin-top: var(--space-8);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--line-brass);
   text-align: center;
   max-width: 640px;
   margin-left: auto;

@@ -101,6 +101,7 @@
       "community.eyebrow": "In their words",
       "community.heading": "Who's in the room.",
       "community.lead": "Founders, doctors, lawyers, creatives — women who don't need a trip, they need the right ones to take it with.",
+      "community.role1": "Founders", "community.role2": "Doctors", "community.role3": "Lawyers", "community.role4": "Creatives",
       "community.reserved": "Their words, not ours — reserved for the members who'll share them.",
 
       "join.eyebrow": "Membership",
@@ -219,6 +220,7 @@
       "community.eyebrow": "Їхніми словами",
       "community.heading": "Хто в колі.",
       "community.lead": "Засновниці, лікарки, юристки, творчі жінки — ті, кому не потрібна поїздка, їм потрібні правильні супутниці для неї.",
+      "community.role1": "Засновниці", "community.role2": "Лікарки", "community.role3": "Юристки", "community.role4": "Творчі жінки",
       "community.reserved": "Це їхні слова, не наші — чекають на тих учасниць, що ними поділяться.",
 
       "join.eyebrow": "Членство",
