@@ -100,6 +100,8 @@
       "gallery.cap10": "Somewhere on the Riviera",
       "gallery.cap11": "Under sail",
       "gallery.cap12": "The view from up here",
+      "gallery.cap13": "Coffee first",
+      "gallery.cap14": "Golden hour, always",
       "gallery.more": "More of this on Instagram →",
 
       "community.eyebrow": "In their words",
@@ -219,6 +221,8 @@
       "gallery.cap10": "Десь на Рив'єрі",
       "gallery.cap11": "Під вітрилом",
       "gallery.cap12": "Вид згори",
+      "gallery.cap13": "Спершу кава",
+      "gallery.cap14": "Золота година, завжди",
       "gallery.more": "Ще більше в Instagram →",
 
       "community.eyebrow": "Їхніми словами",
