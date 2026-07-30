@@ -42,7 +42,7 @@
       "experiences.lead": "Not a tour operator. Not a gym. A community that shows up for you, in four regular forms.",
 
       "exp.trips.photo": "Photo pending — Mykonos, girls trip",
-      "exp.trips.alt": "La Vie Club members on a girls trip to Mykonos",
+      "exp.trips.alt": "Golden hour on a La Vie Club girls trip",
       "exp.trips.eyebrow": "Girls Trips",
       "exp.trips.title": "A season of escapes.",
       "exp.trips.desc": "Maldives, Mykonos, Santorini, Milan &amp; Como, Paris, Courchevel — a full calendar across the year, villas and private drivers included, plus intimate off-calendar trips with only a few seats.",
@@ -214,7 +214,7 @@
       "experiences.lead": "Не туристична агенція. Не фітнес-клуб. Спільнота, яка підтримує тебе у чотирьох постійних форматах.",
 
       "exp.trips.photo": "Фото очікується — Міконос, girls trip",
-      "exp.trips.alt": "Учасниці La Vie Club у поїздці на Міконос",
+      "exp.trips.alt": "Золота година в поїздці La Vie Club",
       "exp.trips.eyebrow": "Girls Trips",
       "exp.trips.title": "Сезон утеч.",
       "exp.trips.desc": "Мальдіви, Міконос, Санторіні, Мілан &amp; Комо, Париж, Куршевель — повний календар на весь рік, з віллами й приватним водієм, плюс камерні позапланові поїздки на кілька місць.",
