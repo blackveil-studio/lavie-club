@@ -31,3 +31,13 @@
 }
 .legal p + h2{ margin-top: var(--space-8); }
 .legal a{ color: var(--rose-deep); text-decoration: underline; text-underline-offset: 2px; }
+
+.legal.not-found{
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.legal.not-found .legal-wrap{ max-width: 48ch; }
+.legal.not-found h1{ font-size: var(--fs-h2); margin-bottom: var(--space-4); }
+.legal.not-found p{ margin-bottom: var(--space-6); }
+.not-found-btn{ text-decoration: none; }

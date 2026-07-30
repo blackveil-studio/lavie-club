@@ -174,7 +174,12 @@
       "privacy.h7": "Who this applies to",
       "privacy.p7": "This site isn't directed at children, and we don't knowingly collect information from anyone under 16.",
       "privacy.h8": "Changes to this policy",
-      "privacy.p8": "If we change how we collect or use information, we'll update this page and change the date at the top."
+      "privacy.p8": "If we change how we collect or use information, we'll update this page and change the date at the top.",
+
+      "404.eyebrow": "Not found",
+      "404.heading": "This trip isn't on the calendar.",
+      "404.body": "The page you're looking for has already moved on — check the address, or head back and start again from the beginning.",
+      "404.cta": "Back to La Vie Club"
     },
     ua: {
       "cookie.text": "Цей сайт використовує локальне сховище лише для запам'ятовування мови інтерфейсу — без відстеження, без сторонніх cookie. Детальніше в <a href=\"privacy.html\">Політиці конфіденційності</a>.",
@@ -347,7 +352,12 @@
       "privacy.h7": "Кого це стосується",
       "privacy.p7": "Цей сайт не призначений для дітей, і ми свідомо не збираємо інформацію від осіб молодших 16 років.",
       "privacy.h8": "Зміни до цієї політики",
-      "privacy.p8": "Якщо ми змінимо спосіб збору чи використання інформації, ми оновимо цю сторінку і змінимо дату вгорі."
+      "privacy.p8": "Якщо ми змінимо спосіб збору чи використання інформації, ми оновимо цю сторінку і змінимо дату вгорі.",
+
+      "404.eyebrow": "Не знайдено",
+      "404.heading": "Цієї поїздки немає в календарі.",
+      "404.body": "Сторінка, яку ви шукаєте, вже кудись поїхала — перевірте адресу або поверніться на головну.",
+      "404.cta": "Повернутись до La Vie Club"
     }
   };
 
@@ -586,4 +596,12 @@
   }
 
   applyLang(storageGet("lvc_lang") === "ua" ? "ua" : "en");
+
+  /* ---------------- page-load reveal — a brief arrival moment before the hero shows ---------------- */
+  var pageLoader = document.getElementById("pageLoader");
+  if (pageLoader){
+    setTimeout(function(){
+      pageLoader.classList.add("is-hidden");
+    }, 900);
+  }
 })();
