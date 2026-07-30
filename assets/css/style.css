@@ -94,6 +94,8 @@ button{ font-family: inherit; cursor: pointer; }
   padding-right: clamp(1.25rem, 4vw, 3rem);
 }
 
+#experiences, #journal, #gallery, #community, #join{ scroll-margin-top: 100px; }
+
 .eyebrow{
   display: inline-flex;
   align-items: center;
@@ -266,6 +268,7 @@ button{ font-family: inherit; cursor: pointer; }
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s var(--ease);
+  animation: heroZoom 26s ease-in-out infinite alternate;
 }
 .hero-video.is-ready{ opacity: 1; }
 .hero-photo{
@@ -274,7 +277,9 @@ button{ font-family: inherit; cursor: pointer; }
   object-fit: cover;
   transition: opacity 0.6s var(--ease);
   filter: saturate(0.85) contrast(1.08) sepia(0.08);
+  animation: heroZoom 26s ease-in-out infinite alternate;
 }
+@keyframes heroZoom{ 0%{ transform: scale(1); } 100%{ transform: scale(1.08); } }
 .hero-media.has-video .hero-photo{ opacity: 0; }
 .hero-media::after{
   content: "";
@@ -431,6 +436,16 @@ button{ font-family: inherit; cursor: pointer; }
   max-width: 46ch;
 }
 .manifesto-body p strong{ color: var(--ink); font-weight: 500; }
+.manifesto-body p:first-child::first-letter{
+  font-family: var(--serif);
+  font-size: 3.6em;
+  font-weight: 500;
+  float: left;
+  line-height: 0.78;
+  padding-right: 0.09em;
+  margin-top: 0.06em;
+  color: var(--rose);
+}
 
 .pillars{
   display: grid;

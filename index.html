@@ -25,7 +25,7 @@
 <meta name="twitter:description" content="A private club for ambitious women across Kyiv, Warsaw and Europe. Girls trips, Stretch Club, Tennis Club, brunches.">
 <meta name="twitter:image" content="https://lavieclub.com/img/exp-girlstrips.jpg">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22Georgia,serif%22>L</text></svg>">
+<link rel="icon" type="image/png" href="img/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,11 +94,11 @@
       </video>
       <img class="hero-photo" id="heroPhoto" src="img/hero-poster.jpg" alt="">
     </div>
-    <div class="hero-content">
-      <p class="eyebrow" data-i18n="hero.eyebrow">Women's Club — Kyiv · Warsaw · Europe</p>
-      <h1 data-i18n="hero.headline">Live it, inspired.</h1>
-      <p class="hero-sub" data-i18n="hero.sub">A community, first — trips across the year, weekly movement and matches, long brunches, and women who show up for each other in between.</p>
-      <div class="hero-foot">
+    <div class="hero-content reveal-stagger">
+      <p class="eyebrow reveal" style="--i:0" data-i18n="hero.eyebrow">Women's Club — Kyiv · Warsaw · Europe</p>
+      <h1 class="reveal" style="--i:1" data-i18n="hero.headline">Live it, inspired.</h1>
+      <p class="hero-sub reveal" style="--i:2" data-i18n="hero.sub">A community, first — trips across the year, weekly movement and matches, long brunches, and women who show up for each other in between.</p>
+      <div class="hero-foot reveal" style="--i:3">
         <p class="hero-locations" data-i18n="hero.locations">Mykonos · Santorini · Maldives · Milan &amp; Como · Paris · Courchevel · Warsaw · Kyiv</p>
         <div class="scroll-cue"><span data-i18n="hero.scroll">Scroll</span><span class="line"></span></div>
       </div>
@@ -108,10 +108,10 @@
   <!-- ============================ STATS ============================ -->
   <section class="stats">
     <div class="wrap stats-row">
-      <div class="stat reveal"><span class="stat-num">12,600+</span><span class="stat-label" data-i18n="stats.members">women in the community</span></div>
-      <div class="stat reveal"><span class="stat-num">8</span><span class="stat-label" data-i18n="stats.trips">trips on the 2026 calendar</span></div>
-      <div class="stat reveal"><span class="stat-num">2</span><span class="stat-label" data-i18n="stats.cities">home cities — Kyiv &amp; Warsaw</span></div>
-      <div class="stat reveal"><span class="stat-num">52</span><span class="stat-label" data-i18n="stats.weeks">weeks a year of Stretch &amp; Tennis</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count-to="12600" data-suffix="+">0</span><span class="stat-label" data-i18n="stats.members">women in the community</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count-to="8">0</span><span class="stat-label" data-i18n="stats.trips">trips on the 2026 calendar</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count-to="2">0</span><span class="stat-label" data-i18n="stats.cities">home cities — Kyiv &amp; Warsaw</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count-to="52">0</span><span class="stat-label" data-i18n="stats.weeks">weeks a year of Stretch &amp; Tennis</span></div>
     </div>
   </section>
 
@@ -153,8 +153,8 @@
   </section>
 
   <!-- ============================ STATEMENT ============================ -->
-  <section class="statement">
-    <img class="real-photo" src="img/journal-santorini.jpg" alt="">
+  <section class="statement" id="statementSection">
+    <img class="real-photo" id="statementPhoto" src="img/journal-santorini.jpg" alt="">
     <p class="reveal" data-i18n="statement.line">The company was always the point.</p>
   </section>
 

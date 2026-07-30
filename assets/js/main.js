@@ -329,6 +329,58 @@
     revealEls.forEach(function(el){ el.classList.add("is-visible"); });
   }
 
+  /* ---------------- stat count-up (real figures, animated once in view) ---------------- */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var statEls = document.querySelectorAll(".stat-num[data-count-to]");
+  function animateCount(el){
+    var target = parseInt(el.getAttribute("data-count-to"), 10);
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (reduceMotion){ el.textContent = target.toLocaleString("en-US") + suffix; return; }
+    var start = null, dur = 1400;
+    function tick(ts){
+      if (start === null) start = ts;
+      var p = Math.min(1, (ts - start) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString("en-US") + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if (statEls.length && "IntersectionObserver" in window){
+    var statIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          animateCount(entry.target);
+          statIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    statEls.forEach(function(el){ statIo.observe(el); });
+  } else {
+    statEls.forEach(animateCount);
+  }
+
+  /* ---------------- statement section — quiet scroll parallax on the photo ---------------- */
+  var statementSection = document.getElementById("statementSection");
+  var statementPhoto = document.getElementById("statementPhoto");
+  if (statementSection && statementPhoto && !reduceMotion){
+    statementPhoto.style.transform = "scale(1.15)";
+    var tickingStatement = false;
+    function updateStatementParallax(){
+      tickingStatement = false;
+      var rect = statementSection.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.bottom < 0 || rect.top > vh) return;
+      var progress = (rect.top / vh); // ~1 when entering from below, ~-1 when leaving above
+      var offset = progress * -40;
+      statementPhoto.style.transform = "scale(1.15) translateY(" + offset.toFixed(1) + "px)";
+    }
+    window.addEventListener("scroll", function(){
+      if (!tickingStatement){ tickingStatement = true; requestAnimationFrame(updateStatementParallax); }
+    }, { passive: true });
+    updateStatementParallax();
+  }
+
   /* ---------------- gallery lightbox ---------------- */
   var lightbox = document.getElementById("lightbox");
   var lightboxStage = document.getElementById("lightboxStage");
