@@ -612,6 +612,16 @@ button{ font-family: inherit; cursor: pointer; }
   flex-direction: column;
   gap: 0.4em;
 }
+.season-item.is-next{ border-left-color: var(--rose); }
+.season-next-badge{
+  display: block;
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
 .season-date{
   font-size: 0.72rem;
   letter-spacing: 0.12em;

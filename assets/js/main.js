@@ -62,6 +62,7 @@
       "season.heading": "The 2026 season.",
       "season.lead": "Eight trips, booked out season by season. A few off-calendar escapes appear without warning — seats are always limited.",
       "season.limited": "Limited seats",
+      "season.next": "Next trip",
       "season.date1": "Mar 20–27", "season.name1": "Maldives",
       "season.date2": "Jun 15–21", "season.name2": "Mykonos",
       "season.date3": "Jul 15–21", "season.name3": "Santorini",
@@ -181,6 +182,7 @@
       "season.heading": "Сезон 2026.",
       "season.lead": "Вісім поїздок, які розбирають сезон за сезоном. Кілька позапланових утеч з'являються без попередження — місць завжди мало.",
       "season.limited": "Мало місць",
+      "season.next": "Найближча поїздка",
       "season.date1": "20–27 бер", "season.name1": "Мальдіви",
       "season.date2": "15–21 чер", "season.name2": "Міконос",
       "season.date3": "15–21 лип", "season.name3": "Санторіні",
@@ -330,6 +332,24 @@
   } else {
     revealEls.forEach(function(el){ el.classList.add("is-visible"); });
   }
+
+  /* ---------------- season — badge whichever real trip is coming up next ---------------- */
+  (function(){
+    var items = document.querySelectorAll(".season-item[data-end]");
+    var today = new Date(); today.setHours(0,0,0,0);
+    for (var i = 0; i < items.length; i++){
+      var end = new Date(items[i].getAttribute("data-end"));
+      if (end >= today){
+        var badge = document.createElement("span");
+        badge.className = "season-next-badge";
+        badge.setAttribute("data-i18n", "season.next");
+        badge.textContent = translations[currentLang]["season.next"];
+        items[i].insertBefore(badge, items[i].firstChild);
+        items[i].classList.add("is-next");
+        break;
+      }
+    }
+  })();
 
   /* ---------------- stat count-up (real figures, animated once in view) ---------------- */
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
