@@ -416,10 +416,14 @@
   var heroVideo = document.getElementById("heroVideo");
   var heroMedia = document.getElementById("heroMedia");
   if (heroVideo){
-    heroVideo.addEventListener("loadeddata", function(){
+    function markVideoReady(){
       heroVideo.classList.add("is-ready");
       heroMedia.classList.add("has-video");
-    });
+    }
+    heroVideo.addEventListener("loadeddata", markVideoReady);
+    // A cached video can reach readyState >= HAVE_CURRENT_DATA before this
+    // script runs, so "loadeddata" never fires again — check directly too.
+    if (heroVideo.readyState >= 2) markVideoReady();
     heroVideo.addEventListener("error", function(){
       heroVideo.remove();
     });

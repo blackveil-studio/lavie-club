@@ -499,6 +499,13 @@ button{ font-family: inherit; cursor: pointer; }
   align-items: center;
   overflow: hidden;
 }
+.statement::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 38%, rgba(6,5,4,0.5) 72%, rgba(6,5,4,0.68) 100%);
+  pointer-events: none;
+}
 .statement-inner{
   position: relative;
   z-index: 1;
@@ -863,8 +870,8 @@ button{ font-family: inherit; cursor: pointer; }
 .community-roles li{
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.15rem;
-  color: var(--stone);
+  font-size: 1.55rem;
+  color: var(--ink);
 }
 .community-roles li::before{ content: "— "; color: var(--rose); font-style: normal; }
 .quote-mark{
@@ -876,19 +883,12 @@ button{ font-family: inherit; cursor: pointer; }
   margin-bottom: 0.2em;
 }
 .testimonials-grid{
-  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-8);
   margin-top: var(--space-8);
   padding-top: var(--space-6);
-}
-.testimonials-grid::before{
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 64px; height: 2px;
-  background: var(--brass);
+  border-top: 2px solid var(--line-brass);
 }
 .testimonial{
   text-align: left;
