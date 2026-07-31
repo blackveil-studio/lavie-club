@@ -486,7 +486,8 @@
         badge.className = "season-next-badge";
         badge.setAttribute("data-i18n", "season.next");
         badge.textContent = translations[currentLang]["season.next"];
-        items[i].insertBefore(badge, items[i].firstChild);
+        var top = items[i].querySelector(".season-top");
+        top.appendChild(badge);
         items[i].classList.add("is-next");
         break;
       }

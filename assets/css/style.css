@@ -325,7 +325,11 @@ button{ font-family: inherit; cursor: pointer; }
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  margin-top: var(--space-8);
+  /* Keeps (gap-above + edge-gap) constant at space-8 + space-12, so pushing the
+     edge-gap down to clamp(...) here shifts this row toward the viewport edge
+     without moving the headline above it — see .hero-content's matching
+     padding-bottom. */
+  margin-top: calc(var(--space-8) + var(--space-12) - clamp(1.25rem, 3vh, 2rem));
   padding-top: var(--space-4);
   border-top: 1px solid rgba(251,249,244,0.25);
   flex-wrap: wrap;
@@ -493,12 +497,18 @@ button{ font-family: inherit; cursor: pointer; }
   min-height: 62vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   overflow: hidden;
 }
-.statement p{
+.statement-inner{
   position: relative;
   z-index: 1;
+  max-width: var(--container);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.statement p{
   max-width: min(20ch, 70vw);
   text-align: right;
   text-wrap: balance;
@@ -622,14 +632,18 @@ button{ font-family: inherit; cursor: pointer; }
   gap: 0.4em;
 }
 .season-item.is-next{ border-left-color: var(--rose); }
+.season-top{
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  white-space: nowrap;
+}
 .season-next-badge{
-  display: block;
   font-size: 0.64rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--rose-deep);
   font-weight: 700;
-  margin-bottom: 0.5em;
 }
 .season-date{
   font-size: 0.72rem;
@@ -827,7 +841,7 @@ button{ font-family: inherit; cursor: pointer; }
   gap: var(--space-8);
   margin-bottom: var(--space-8);
 }
-.community-top .section-head{ margin-bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+.community-top .section-head{ margin-bottom: 0; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; }
 .community-photo{
   position: relative;
   overflow: hidden;
@@ -862,20 +876,33 @@ button{ font-family: inherit; cursor: pointer; }
   margin-bottom: 0.2em;
 }
 .testimonials-grid{
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-8);
-  margin-top: var(--space-12);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--line-brass);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
 }
+.testimonials-grid::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 64px; height: 2px;
+  background: var(--brass);
+}
+.testimonial{
+  text-align: left;
+  padding-right: var(--space-6);
+  border-right: 1px solid var(--line);
+}
+.testimonial:last-child{ padding-right: 0; border-right: none; }
 .testimonial p{
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.4rem;
   line-height: 1.5;
   color: var(--ink);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 .testimonial-name{
   display: block;
@@ -885,10 +912,14 @@ button{ font-family: inherit; cursor: pointer; }
   text-transform: uppercase;
   color: var(--brass);
   font-weight: 600;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line);
 }
 
 @media (max-width: 880px){
-  .testimonials-grid{ grid-template-columns: 1fr; gap: var(--space-8); }
+  .testimonials-grid{ grid-template-columns: 1fr; gap: var(--space-6); }
+  .testimonial{ padding-right: 0; padding-bottom: var(--space-6); border-right: none; border-bottom: 1px solid var(--line); }
+  .testimonial:last-child{ padding-bottom: 0; border-bottom: none; }
 }
 
 /* ==========================================================================
