@@ -529,6 +529,19 @@
     statEls.forEach(animateCount);
   }
 
+  /* ---------------- back to top ---------------- */
+  var toTop = document.getElementById("toTop");
+  if (toTop){
+    function onScrollToTop(){
+      var y = window.scrollY || window.pageYOffset;
+      toTop.classList.toggle("is-visible", y > 700);
+    }
+    window.addEventListener("scroll", onScrollToTop, { passive: true });
+    onScrollToTop();
+    toTop.addEventListener("click", function(){
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
 
   /* ---------------- gallery lightbox ---------------- */
   var lightbox = document.getElementById("lightbox");
