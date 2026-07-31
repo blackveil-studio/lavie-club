@@ -524,26 +524,6 @@
     statEls.forEach(animateCount);
   }
 
-  /* ---------------- statement section — quiet scroll parallax on the photo ---------------- */
-  var statementSection = document.getElementById("statementSection");
-  var statementPhoto = document.getElementById("statementPhoto");
-  if (statementSection && statementPhoto && !reduceMotion){
-    statementPhoto.style.transform = "scale(1.15)";
-    var tickingStatement = false;
-    function updateStatementParallax(){
-      tickingStatement = false;
-      var rect = statementSection.getBoundingClientRect();
-      var vh = window.innerHeight || document.documentElement.clientHeight;
-      if (rect.bottom < 0 || rect.top > vh) return;
-      var progress = (rect.top / vh); // ~1 when entering from below, ~-1 when leaving above
-      var offset = progress * -40;
-      statementPhoto.style.transform = "scale(1.15) translateY(" + offset.toFixed(1) + "px)";
-    }
-    window.addEventListener("scroll", function(){
-      if (!tickingStatement){ tickingStatement = true; requestAnimationFrame(updateStatementParallax); }
-    }, { passive: true });
-    updateStatementParallax();
-  }
 
   /* ---------------- gallery lightbox ---------------- */
   var lightbox = document.getElementById("lightbox");
