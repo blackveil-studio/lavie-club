@@ -632,13 +632,22 @@ button{ font-family: inherit; cursor: pointer; }
   flex: 0 0 auto;
   min-width: 200px;
   padding: var(--space-4) var(--space-4) var(--space-4) 0;
-  border-left: 1px solid var(--line-brass);
+  border-left: 2px dashed var(--line-brass);
   padding-left: var(--space-3);
   display: flex;
   flex-direction: column;
   gap: 0.4em;
 }
 .season-item.is-next{ border-left-color: var(--rose); }
+.season-name-row{ display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em; }
+.season-code{
+  font-family: var(--sans);
+  font-size: 0.64rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--stone-quiet);
+  white-space: nowrap;
+}
 .season-top{
   display: flex;
   align-items: baseline;
@@ -946,6 +955,28 @@ button{ font-family: inherit; cursor: pointer; }
   gap: var(--space-12);
   align-items: start;
 }
+.seal{
+  position: relative;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--brass-soft);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-4);
+}
+.seal::before{
+  content: "";
+  position: absolute; inset: 5px;
+  border: 1px solid rgba(225,189,139,0.35);
+  border-radius: 50%;
+}
+.seal span{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--brass-soft);
+}
+.btn-ticket{ border-left: 2px dashed rgba(251,249,244,0.4); padding-left: 1.3em; }
 .join .eyebrow{ color: var(--brass-soft); }
 .join .eyebrow::before{ background: var(--brass-soft); }
 .join h2{ font-size: var(--fs-h2); margin-top: var(--space-3); color: #FBF9F4; max-width: 14ch; }
