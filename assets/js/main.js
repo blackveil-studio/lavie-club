@@ -34,6 +34,8 @@
       "manifesto.pillar3.desc": "Room to exhale — between ambition, work, and the rest of a full life.",
       "manifesto.pillar4.label": "Aesthetic",
       "manifesto.pillar4.desc": "Every gathering made with care. Beauty here isn't decoration, it's part of the point.",
+      "manifesto.founderQuote": "“They say I inspire people to live boldly — without ‘later.’”",
+      "manifesto.founderRole": "— Founder",
 
       "statement.line": "The company was always the point.",
 
@@ -212,6 +214,8 @@
       "manifesto.pillar3.desc": "Простір видихнути — між амбіціями, роботою і рештою повного життя.",
       "manifesto.pillar4.label": "Естетика",
       "manifesto.pillar4.desc": "Кожна зустріч продумана з турботою. Краса тут — не прикраса, а частина суті.",
+      "manifesto.founderQuote": "«Кажуть, я надихаю жити сміливо — без «потім».»",
+      "manifesto.founderRole": "— засновниця",
 
       "statement.line": "Компанія завжди була суттю.",
 
@@ -540,6 +544,26 @@
     onScrollToTop();
     toTop.addEventListener("click", function(){
       window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
+  /* ---------------- magnetic hover on primary CTAs ---------------- */
+  var magneticEls = document.querySelectorAll(".magnetic");
+  if (magneticEls.length && !reduceMotion && window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches){
+    magneticEls.forEach(function(el){
+      var ox = 0, oy = 0;
+      function apply(pressed){
+        el.style.transform = "translate(" + ox.toFixed(1) + "px," + oy.toFixed(1) + "px)" + (pressed ? " scale(0.96)" : "");
+      }
+      el.addEventListener("mousemove", function(e){
+        var r = el.getBoundingClientRect();
+        ox = (e.clientX - r.left - r.width / 2) * 0.25;
+        oy = (e.clientY - r.top - r.height / 2) * 0.35;
+        apply(false);
+      });
+      el.addEventListener("mouseleave", function(){ ox = 0; oy = 0; apply(false); });
+      el.addEventListener("mousedown", function(){ apply(true); });
+      el.addEventListener("mouseup", function(){ apply(false); });
     });
   }
 

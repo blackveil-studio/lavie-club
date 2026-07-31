@@ -241,6 +241,7 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .btn:hover{ background: var(--ink); color: var(--base); }
 .btn:active{ transform: scale(0.97); }
+.magnetic{ transition: transform 0.2s var(--ease), background var(--dur-s) var(--ease), color var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease); }
 .btn-solid{ background: var(--ink); color: var(--base); }
 .btn-solid:hover{ background: var(--rose-deep); }
 
@@ -458,6 +459,37 @@ button{ font-family: inherit; cursor: pointer; }
   padding-right: 0.09em;
   margin-top: 0.06em;
   color: var(--rose);
+}
+
+.founder-note{
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+  max-width: 46ch;
+}
+.founder-note img{
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+.founder-quote{
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 0.3em;
+}
+.founder-name{
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 600;
 }
 
 .pillars{
@@ -971,9 +1003,10 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .seal span{
   font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.4rem;
-  letter-spacing: 0.04em;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.14em;
   color: var(--brass-soft);
 }
 .btn-ticket{ border-left: 2px dashed rgba(251,249,244,0.4); padding-left: 1.3em; }
