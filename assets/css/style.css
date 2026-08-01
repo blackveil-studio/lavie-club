@@ -407,10 +407,11 @@ button{ font-family: inherit; cursor: pointer; }
 .stat-num{
   display: block;
   font-family: var(--serif);
-  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
   color: var(--brass-soft);
-  line-height: 1.2;
-  font-weight: 500;
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: 0.03em;
 }
 .stat-label{
   display: block;
@@ -590,8 +591,11 @@ button{ font-family: inherit; cursor: pointer; }
 .exp-side{ display: flex; flex-direction: column; gap: var(--space-4); }
 .exp-side .exp-card--a{ aspect-ratio: 16 / 10; }
 .exp-side-row{ display: flex; align-items: flex-start; gap: var(--space-4); }
-.exp-side-row .exp-card--b{ flex: 1.1; aspect-ratio: 4 / 5; }
-.exp-side-row .exp-card--c{ flex: 1; aspect-ratio: 4 / 5; margin-top: var(--space-8); }
+.exp-side-row .exp-card--b{ flex: 1.1; aspect-ratio: 3 / 4; }
+.exp-side-row .exp-card--c{ flex: 1; aspect-ratio: 3 / 4; margin-top: var(--space-8); }
+.exp-side-row .exp-card-body{ padding: var(--space-4); }
+.exp-side-row .exp-card h3{ font-size: clamp(1.05rem, 1.7vw, 1.3rem); line-height: 1.2; }
+.exp-side-row .exp-card p{ font-size: 0.78rem; }
 .exp-card .placeholder{ position: absolute; inset: 0; background: linear-gradient(160deg, #a8664f 0%, #3a201a 100%); }
 .exp-card:nth-child(2) .placeholder{ background: linear-gradient(160deg, #7c7a4f 0%, #2e2c1c 100%); }
 .exp-card:nth-child(3) .placeholder{ background: linear-gradient(160deg, #8a6446 0%, #3a2818 100%); }
@@ -676,16 +680,41 @@ button{ font-family: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   gap: 0.4em;
+  transition: border-left-color var(--dur-s) var(--ease);
 }
 .season-item.is-next{ border-left-color: var(--rose); }
+.season-item:hover{ border-left-color: var(--brass); }
+.season-item.is-next:hover{ border-left-color: var(--rose-deep); }
 .season-name-row{ display: flex; align-items: baseline; justify-content: space-between; gap: 0.6em; }
 .season-code{
+  position: relative;
   font-family: var(--sans);
   font-size: 0.64rem;
   letter-spacing: 0.15em;
   font-weight: 600;
   color: var(--stone-quiet);
   white-space: nowrap;
+  transition: color var(--dur-s) var(--ease);
+}
+.season-item:hover .season-code{ color: var(--brass); }
+.season-preview{
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 10px);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  filter: blur(6px);
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.6);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), filter 0.35s var(--ease);
+}
+.season-item:hover .season-preview{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(-50%) scale(1);
 }
 .season-top{
   display: flex;

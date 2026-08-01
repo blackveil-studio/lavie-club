@@ -32,7 +32,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script type="application/ld+json">
@@ -99,7 +99,8 @@
   <section class="hero">
     <div class="hero-media" id="heroMedia">
       <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg">
-        <source src="img/video/beach-walk-friends.mp4" type="video/mp4">
+        <source media="(min-width: 769px)" src="img/video/beach-walk-friends-desktop.mp4" type="video/mp4">
+        <source src="img/video/beach-walk-friends-mobile.mp4" type="video/mp4">
       </video>
       <img class="hero-photo" id="heroPhoto" src="img/hero-poster.jpg" alt="">
     </div>
@@ -117,10 +118,10 @@
   <!-- ============================ STATS ============================ -->
   <section class="stats">
     <div class="wrap stats-row">
-      <div class="stat reveal"><span class="stat-num" data-count-to="12600" data-suffix="+">0</span><span class="stat-label" data-i18n="stats.members">women in the community</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count-to="8">0</span><span class="stat-label" data-i18n="stats.trips">trips on the 2026 calendar</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count-to="2">0</span><span class="stat-label" data-i18n="stats.cities">home cities — Kyiv &amp; Warsaw</span></div>
-      <div class="stat reveal"><span class="stat-num" data-count-to="52">0</span><span class="stat-label" data-i18n="stats.weeks">weeks a year of Stretch &amp; Tennis</span></div>
+      <div class="stat reveal"><span class="stat-num">12,600+</span><span class="stat-label" data-i18n="stats.members">women in the community</span></div>
+      <div class="stat reveal"><span class="stat-num">8</span><span class="stat-label" data-i18n="stats.trips">trips on the 2026 calendar</span></div>
+      <div class="stat reveal"><span class="stat-num">2</span><span class="stat-label" data-i18n="stats.cities">home cities — Kyiv &amp; Warsaw</span></div>
+      <div class="stat reveal"><span class="stat-num">52</span><span class="stat-label" data-i18n="stats.weeks">weeks a year of Stretch &amp; Tennis</span></div>
     </div>
   </section>
 
@@ -255,32 +256,32 @@
       <div class="season-strip">
         <div class="season-item reveal" data-end="2026-03-27">
           <div class="season-top"><span class="season-date" data-i18n="season.date1">Mar 20–27</span></div>
-          <div class="season-name-row"><h4 data-i18n="season.name1">Maldives</h4><span class="season-code" aria-hidden="true">MLE</span></div>
+          <div class="season-name-row"><h4 data-i18n="season.name1">Maldives</h4><span class="season-code" aria-hidden="true">MLE<img class="season-preview" src="img/journal-maldives.jpg" alt="" loading="lazy"></span></div>
         </div>
         <div class="season-item reveal" data-end="2026-06-21">
           <div class="season-top"><span class="season-date" data-i18n="season.date2">Jun 15–21</span></div>
-          <div class="season-name-row"><h4 data-i18n="season.name2">Mykonos</h4><span class="season-code" aria-hidden="true">JMK</span></div>
+          <div class="season-name-row"><h4 data-i18n="season.name2">Mykonos</h4><span class="season-code" aria-hidden="true">JMK<img class="season-preview" src="img/journal-mykonos.jpg" alt="" loading="lazy"></span></div>
         </div>
         <div class="season-item reveal" data-end="2026-07-21">
           <div class="season-top"><span class="season-date" data-i18n="season.date3">Jul 15–21</span></div>
-          <div class="season-name-row"><h4 data-i18n="season.name3">Santorini</h4><span class="season-code" aria-hidden="true">JTR</span></div>
+          <div class="season-name-row"><h4 data-i18n="season.name3">Santorini</h4><span class="season-code" aria-hidden="true">JTR<img class="season-preview" src="img/journal-santorini.jpg" alt="" loading="lazy"></span></div>
         </div>
         <div class="season-item reveal" data-end="2026-08-21">
           <div class="season-top"><span class="season-date" data-i18n="season.date4">Aug 15–21</span></div>
-          <div class="season-name-row"><h4 data-i18n="season.name4">Mykonos</h4><span class="season-code" aria-hidden="true">JMK</span></div>
+          <div class="season-name-row"><h4 data-i18n="season.name4">Mykonos</h4><span class="season-code" aria-hidden="true">JMK<img class="season-preview" src="img/journal-mykonos.jpg" alt="" loading="lazy"></span></div>
           <span class="season-tag" data-i18n="season.limited">Limited seats</span>
         </div>
         <div class="season-item reveal" data-end="2026-09-12">
           <div class="season-top"><span class="season-date" data-i18n="season.date5">Sep 7–12</span></div>
-          <div class="season-name-row"><h4 data-i18n="season.name5">Milan &amp; Como</h4><span class="season-code" aria-hidden="true">MXP</span></div>
+          <div class="season-name-row"><h4 data-i18n="season.name5">Milan &amp; Como</h4><span class="season-code" aria-hidden="true">MXP<img class="season-preview" src="img/journal-milan-como.jpg" alt="" loading="lazy"></span></div>
         </div>
         <div class="season-item reveal" data-end="2026-10-17">
           <div class="season-top"><span class="season-date" data-i18n="season.date6">Oct 10–17</span></div>
-          <div class="season-name-row"><h4 data-i18n="season.name6">Paris &amp; Étretat</h4><span class="season-code" aria-hidden="true">CDG</span></div>
+          <div class="season-name-row"><h4 data-i18n="season.name6">Paris &amp; Étretat</h4><span class="season-code" aria-hidden="true">CDG<img class="season-preview" src="img/journal-paris-etretat.jpg" alt="" loading="lazy"></span></div>
         </div>
         <div class="season-item reveal" data-end="2026-10-27">
           <div class="season-top"><span class="season-date" data-i18n="season.date7">Oct 20–27</span></div>
-          <div class="season-name-row"><h4 data-i18n="season.name7">Maldives</h4><span class="season-code" aria-hidden="true">MLE</span></div>
+          <div class="season-name-row"><h4 data-i18n="season.name7">Maldives</h4><span class="season-code" aria-hidden="true">MLE<img class="season-preview" src="img/journal-maldives.jpg" alt="" loading="lazy"></span></div>
         </div>
         <div class="season-item reveal" data-end="2026-12-18">
           <div class="season-top"><span class="season-date" data-i18n="season.date8">Dec 14–18</span></div>
