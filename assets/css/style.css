@@ -577,7 +577,7 @@ button{ font-family: inherit; cursor: pointer; }
 
 .exp-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--space-4);
 }
 .exp-card{
@@ -585,8 +585,10 @@ button{ font-family: inherit; cursor: pointer; }
   overflow: hidden;
   color: #FBF9F4;
 }
-.exp-card--main{ grid-column: 1 / 4; aspect-ratio: 21 / 8; }
-.exp-card--a, .exp-card--b, .exp-card--c{ aspect-ratio: 4 / 5; }
+.exp-card--main{ grid-column: 1 / 8; grid-row: 1 / 3; }
+.exp-card--a{ grid-column: 8 / 13; grid-row: 1 / 2; aspect-ratio: 16 / 10; }
+.exp-card--b{ grid-column: 8 / 11; grid-row: 2 / 3; aspect-ratio: 4 / 5; margin-top: calc(-1 * var(--space-6)); }
+.exp-card--c{ grid-column: 11 / 13; grid-row: 2 / 3; aspect-ratio: 3 / 5; margin-top: var(--space-8); }
 .exp-card .placeholder{ position: absolute; inset: 0; background: linear-gradient(160deg, #a8664f 0%, #3a201a 100%); }
 .exp-card:nth-child(2) .placeholder{ background: linear-gradient(160deg, #7c7a4f 0%, #2e2c1c 100%); }
 .exp-card:nth-child(3) .placeholder{ background: linear-gradient(160deg, #8a6446 0%, #3a2818 100%); }
@@ -641,8 +643,9 @@ button{ font-family: inherit; cursor: pointer; }
 
 @media (max-width: 880px){
   .exp-grid{ grid-template-columns: 1fr; }
-  .exp-card--main{ grid-column: 1 / 2; aspect-ratio: 4 / 5; }
-  .exp-card--a, .exp-card--b, .exp-card--c{ aspect-ratio: 4 / 5; }
+  .exp-card--main, .exp-card--a, .exp-card--b, .exp-card--c{
+    grid-column: 1 / 2; grid-row: auto; aspect-ratio: 4 / 5; margin-top: 0;
+  }
 }
 
 /* ==========================================================================
@@ -723,6 +726,11 @@ button{ font-family: inherit; cursor: pointer; }
 }
 .season-cta:hover{ opacity: 0.7; }
 
+/* Comparison variant for review only, toggled via ?calendar=neutral — see main.js */
+.season-strip--neutral .season-item{ border-left: 1px solid var(--line-brass); }
+.season-strip--neutral .season-item.is-next{ border-left-color: var(--rose); }
+.season-strip--neutral .season-code{ display: none; }
+
 /* ==========================================================================
    Gallery — real reels and candid photos, dark and unpolished on purpose
    ========================================================================== */
@@ -731,6 +739,15 @@ button{ font-family: inherit; cursor: pointer; }
 .gallery .eyebrow::before{ background: var(--brass-soft); }
 .gallery .section-head h2{ color: #FBF9F4; }
 .gallery .section-head .lead{ color: rgba(251,249,244,0.6); }
+.gallery-cta{ color: rgba(251,249,244,0.75); border-bottom-color: rgba(251,249,244,0.5); margin-bottom: var(--space-4); }
+
+/* Comparison variant for review only, toggled via ?gallery=light — see main.js */
+.gallery--light{ background: var(--surface); color: var(--ink); }
+.gallery--light .eyebrow{ color: var(--rose-deep); }
+.gallery--light .eyebrow::before{ background: var(--rose-deep); }
+.gallery--light .section-head h2{ color: var(--ink); }
+.gallery--light .section-head .lead{ color: var(--stone); }
+.gallery--light .gallery-cta{ color: var(--rose-deep); border-bottom-color: var(--rose-deep); }
 
 .gallery-grid{
   display: grid;

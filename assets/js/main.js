@@ -17,7 +17,7 @@
       "hero.sub": "A community, first — trips across the year, weekly movement and matches, long brunches, and women who show up for each other in between.",
       "hero.locations": "Mykonos · Santorini · Maldives · Milan &amp; Como · Paris · Courchevel · Warsaw · Kyiv",
       "hero.scroll": "Scroll",
-      "stats.members": "women in the community",
+      "stats.members": "women — each one personally invited",
       "stats.trips": "trips on the 2026 calendar",
       "stats.cities": "home cities — Kyiv &amp; Warsaw",
       "stats.weeks": "weeks a year of Stretch &amp; Tennis",
@@ -197,7 +197,7 @@
       "hero.sub": "Насамперед — спільнота: подорожі впродовж усього сезону, щотижневий рух і матчі, довгі бранчі та жінки, які підтримують одна одну між зустрічами.",
       "hero.locations": "Міконос · Санторіні · Мальдіви · Мілан &amp; Комо · Париж · Куршевель · Варшава · Київ",
       "hero.scroll": "Гортати",
-      "stats.members": "жінок у спільноті",
+      "stats.members": "жінок — кожну запросили особисто",
       "stats.trips": "поїздок у сезоні 2026",
       "stats.cities": "рідних міста — Київ &amp; Варшава",
       "stats.weeks": "тижнів на рік Stretch &amp; Tennis",
@@ -566,6 +566,19 @@
       el.addEventListener("mouseup", function(){ apply(false); });
     });
   }
+
+  /* ---------------- review-only comparison toggles (?calendar=neutral, ?gallery=light) ---------------- */
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("calendar") === "neutral"){
+      var strip = document.querySelector(".season-strip");
+      if (strip) strip.classList.add("season-strip--neutral");
+    }
+    if (params.get("gallery") === "light"){
+      var gallerySection = document.querySelector(".gallery");
+      if (gallerySection) gallerySection.classList.add("gallery--light");
+    }
+  })();
 
   /* ---------------- gallery lightbox ---------------- */
   var lightbox = document.getElementById("lightbox");
