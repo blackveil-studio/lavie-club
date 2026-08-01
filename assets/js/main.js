@@ -398,8 +398,19 @@
 
   document.querySelectorAll(".lang-toggle button").forEach(function(btn){
     btn.addEventListener("click", function(){
-      applyLang(btn.getAttribute("data-lang"));
-      storageSet("lvc_lang", btn.getAttribute("data-lang"));
+      var lang = btn.getAttribute("data-lang");
+      if (lang === currentLang) return;
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+        applyLang(lang);
+        storageSet("lvc_lang", lang);
+        return;
+      }
+      document.body.classList.add("is-translating");
+      setTimeout(function(){
+        applyLang(lang);
+        storageSet("lvc_lang", lang);
+        document.body.classList.remove("is-translating");
+      }, 180);
     });
   });
 

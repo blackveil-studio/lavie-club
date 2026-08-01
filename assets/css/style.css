@@ -68,7 +68,9 @@ body{
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   position: relative;
+  transition: opacity 0.18s var(--ease);
 }
+body.is-translating{ opacity: 0.4; }
 /* Faint paper grain across the whole page — warmth and texture instead of a flat digital fill. */
 body::before{
   content: "";
@@ -480,7 +482,7 @@ button{ font-family: inherit; cursor: pointer; }
 .founder-note .founder-quote{
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--rose-deep);
   line-height: 1.4;
@@ -669,6 +671,7 @@ button{ font-family: inherit; cursor: pointer; }
   display: flex;
   gap: 0;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x proximity;
   padding-bottom: var(--space-2);
 }
