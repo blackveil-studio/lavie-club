@@ -593,9 +593,9 @@ button{ font-family: inherit; cursor: pointer; }
 .exp-card--main{ height: 100%; }
 .exp-side{ display: flex; flex-direction: column; gap: var(--space-4); }
 .exp-side .exp-card--a{ aspect-ratio: 16 / 10; }
-.exp-side-row{ display: flex; align-items: flex-start; gap: var(--space-4); }
-.exp-side-row .exp-card--b{ flex: 1.1; aspect-ratio: 3 / 4; }
-.exp-side-row .exp-card--c{ flex: 1; aspect-ratio: 3 / 4; margin-top: var(--space-8); }
+.exp-side-row{ display: flex; align-items: stretch; gap: var(--space-4); }
+.exp-side-row .exp-card--b,
+.exp-side-row .exp-card--c{ flex: 1; aspect-ratio: 3 / 4; }
 .exp-side-row .exp-card-body{ padding: var(--space-4); }
 .exp-side-row .exp-card h3{ font-size: clamp(1.05rem, 1.7vw, 1.3rem); line-height: 1.2; }
 .exp-side-row .exp-card p{ font-size: 0.78rem; }
