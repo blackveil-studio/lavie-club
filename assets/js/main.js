@@ -442,6 +442,20 @@
     heroVideo.addEventListener("error", function(){
       heroVideo.remove();
     });
+    // Play once the browser expects to get through without pausing to
+    // buffer, instead of the native autoplay attribute (which starts as
+    // soon as a few frames exist and can stutter repeatedly on a cold,
+    // hard-refreshed cache while the rest of the file keeps downloading).
+    var heroPlayStarted = false;
+    function startHeroPlay(){
+      if (heroPlayStarted) return;
+      heroPlayStarted = true;
+      heroVideo.play().catch(function(){});
+    }
+    heroVideo.addEventListener("canplaythrough", startHeroPlay);
+    if (heroVideo.readyState >= 4) startHeroPlay();
+    // Slow connection safety net — don't leave the poster frozen forever.
+    setTimeout(startHeroPlay, 3000);
     // If no <source> resolves, the element itself errors on the source, not always the video tag.
     heroVideo.querySelectorAll("source").forEach(function(src){
       src.addEventListener("error", function(){ heroVideo.remove(); });
