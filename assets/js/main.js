@@ -538,16 +538,12 @@
     });
   }
 
-  /* ---------------- review-only comparison toggles (?calendar=neutral, ?gallery=light) ---------------- */
+  /* ---------------- review-only comparison toggle (?calendar=neutral) ---------------- */
   (function(){
     var params = new URLSearchParams(window.location.search);
     if (params.get("calendar") === "neutral"){
       var strip = document.querySelector(".season-strip");
       if (strip) strip.classList.add("season-strip--neutral");
-    }
-    if (params.get("gallery") === "light"){
-      var gallerySection = document.querySelector(".gallery");
-      if (gallerySection) gallerySection.classList.add("gallery--light");
     }
   })();
 
