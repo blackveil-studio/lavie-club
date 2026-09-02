@@ -615,13 +615,20 @@
       openLightbox(btn.getAttribute("data-type"), btn.getAttribute("data-src"));
     });
   });
-  lightboxClose.addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", function(e){
-    if (e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener("keydown", function(e){
-    if (e.key === "Escape") closeLightbox();
-  });
+  // Pages without a gallery (privacy.html, 404.html) have no #lightbox
+  // markup — lightboxClose.addEventListener on null threw uncaught here,
+  // which silently aborted the rest of this script, including the
+  // applyLang() restore call further down (so a saved UA preference
+  // never re-applied on those pages).
+  if (lightbox && lightboxStage && lightboxClose){
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function(e){
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", function(e){
+      if (e.key === "Escape") closeLightbox();
+    });
+  }
 
   /* ---------------- invite form (static — no backend yet) ---------------- */
   var form = document.getElementById("inviteForm");
