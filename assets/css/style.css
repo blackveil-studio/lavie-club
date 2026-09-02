@@ -570,7 +570,15 @@ button{ font-family: inherit; cursor: pointer; }
    a wide landscape crop. On a portrait crop it reads as a stray dark blob —
    switch to a bottom-anchored vertical gradient like the rest of the site. */
 @media (max-width: 768px){
-  .statement{ min-height: 56vh; align-items: flex-end; }
+  /* The source photo is an extreme 2400x1000 panorama — a woman looking
+     out over the village, sea in the distance. A tall, narrow mobile
+     crop centered by default landed in the empty middle: neither her
+     nor the recognizable village/sea view, just anonymous rooftops.
+     Shortening the section shows a wider slice, and shifting the crop
+     left keeps her (the actual subject) in frame with the village
+     behind her, instead of that dead zone. */
+  .statement{ min-height: 46vh; align-items: flex-end; }
+  #statementPhoto{ object-position: 28% center; }
   .statement::after{
     background: linear-gradient(180deg, transparent 35%, rgba(6,5,4,0.55) 72%, rgba(6,5,4,0.8) 100%);
   }
@@ -1132,7 +1140,7 @@ button{ font-family: inherit; cursor: pointer; }
 @media (max-width: 560px){
   .footer-grid{ grid-template-columns: 1fr 1fr; column-gap: var(--space-4); row-gap: var(--space-6); }
   .footer-grid > div:first-child{ grid-column: 1 / -1; }
-  .footer-bottom{ flex-direction: column; align-items: flex-start; gap: 0.5em; }
+  .footer-bottom{ justify-content: center; text-align: center; row-gap: 0.4em; column-gap: 1em; }
 }
 
 /* ==========================================================================
