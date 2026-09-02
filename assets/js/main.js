@@ -484,11 +484,23 @@
   navToggle.addEventListener("click", function(){
     var open = mobileNav.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    // The mobile-nav overlay is light — if the header is still in its
+    // transparent hero-dark state (e.g. menu opened before any scroll),
+    // its white logo/links become unreadable against it. Force the
+    // header into its normal light-background look while open, and
+    // restore whatever the real scroll position calls for on close.
+    if (open){
+      header.classList.add("is-scrolled");
+      header.classList.remove("is-hero-dark");
+    } else if (hasHero){
+      onScroll();
+    }
   });
   mobileNav.querySelectorAll("a").forEach(function(a){
     a.addEventListener("click", function(){
       mobileNav.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
+      if (hasHero) onScroll();
     });
   });
 

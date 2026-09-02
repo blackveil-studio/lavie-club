@@ -12,7 +12,7 @@
   --surface:     #F3EADD;   /* soft sand — section background */
   --surface-2:   #EADBC7;   /* deeper sand, for cards on surface */
   --ink:         #2C221E;   /* soft coffee-graphite — primary text */
-  --stone:       #7C6C5E;   /* warm taupe — secondary text */
+  --stone:       #5E4D40;   /* warm taupe, darkened for reliable body-text contrast */
   --stone-quiet: #AB9686;   /* faint text, captions on light */
   --rose:        #BD6E56;   /* dusty terracotta-rose — primary accent, warmth */
   --rose-deep:   #8F4B39;   /* deeper rose, hovers/emphasis */
@@ -155,7 +155,7 @@ button{ font-family: inherit; cursor: pointer; }
   border-bottom: 1px solid transparent;
 }
 .site-header.is-scrolled{
-  background: rgba(245,243,236,0.88);
+  background: rgba(245,243,236,0.98);
   backdrop-filter: blur(10px);
   border-bottom-color: var(--line);
   padding-top: var(--space-2);
@@ -189,10 +189,12 @@ button{ font-family: inherit; cursor: pointer; }
 .nav-link{ color: var(--ink); }
 .lang-toggle button{ color: var(--ink); }
 .site-header.is-hero-dark:not(.is-scrolled) .nav-link,
-.site-header.is-hero-dark:not(.is-scrolled) .lang-toggle button{
+.site-header.is-hero-dark:not(.is-scrolled) .lang-toggle button,
+.site-header.is-hero-dark:not(.is-scrolled) .nav-toggle{
   color: #FBF9F4;
 }
 .site-header.is-hero-dark:not(.is-scrolled) .nav-link::after{ background: #FBF9F4; }
+.site-header.is-hero-dark:not(.is-scrolled) .lang-toggle button{ text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
 
 .site-header .btn{ border-color: var(--ink); color: var(--ink); }
 .site-header .btn:hover{ background: var(--ink); color: var(--base); }
@@ -562,6 +564,18 @@ button{ font-family: inherit; cursor: pointer; }
   color: #FBF9F4;
   padding: 0 clamp(1.25rem, 4vw, 3rem) 0 var(--space-4);
   text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 6px 28px rgba(0,0,0,0.6), 0 0 60px rgba(0,0,0,0.4);
+}
+
+/* Statement on mobile: the desktop gradient/right-aligned text is tuned for
+   a wide landscape crop. On a portrait crop it reads as a stray dark blob —
+   switch to a bottom-anchored vertical gradient like the rest of the site. */
+@media (max-width: 768px){
+  .statement{ min-height: 56vh; align-items: flex-end; }
+  .statement::after{
+    background: linear-gradient(180deg, transparent 35%, rgba(6,5,4,0.55) 72%, rgba(6,5,4,0.8) 100%);
+  }
+  .statement-inner{ justify-content: flex-start; padding-bottom: var(--space-6); }
+  .statement p{ text-align: left; max-width: 100%; padding: 0 clamp(1.25rem, 4vw, 3rem); }
 }
 
 /* ==========================================================================
@@ -1116,7 +1130,8 @@ button{ font-family: inherit; cursor: pointer; }
   .footer-grid{ grid-template-columns: 1fr 1fr 1fr; }
 }
 @media (max-width: 560px){
-  .footer-grid{ grid-template-columns: 1fr; }
+  .footer-grid{ grid-template-columns: 1fr 1fr; column-gap: var(--space-4); row-gap: var(--space-6); }
+  .footer-grid > div:first-child{ grid-column: 1 / -1; }
   .footer-bottom{ flex-direction: column; align-items: flex-start; gap: 0.5em; }
 }
 
@@ -1139,10 +1154,19 @@ button{ font-family: inherit; cursor: pointer; }
   transition: transform var(--dur-m) var(--ease);
 }
 .mobile-nav.is-open{ transform: translateY(0); }
-.mobile-nav a{ font-family: var(--serif); font-size: 2rem; }
-.mobile-nav .btn{ margin-top: var(--space-4); }
+.mobile-nav a:not(.btn){ font-family: var(--serif); font-size: 2rem; }
+.mobile-nav .btn{ margin-top: var(--space-4); font-size: 0.78rem; }
+.mobile-nav .lang-toggle{ margin-top: var(--space-2); font-size: 0.85rem; color: var(--ink); }
 
 @media (min-width: 901px){ .mobile-nav{ display: none; } }
+
+/* Hero video/photo source is a landscape (16:9) clip; on a portrait mobile
+   viewport, object-fit:cover's default center crop shows mostly empty
+   ocean and cuts off the women on the right of frame. Shift the crop
+   window to keep the group in view. */
+@media (max-width: 768px){
+  .hero-video, .hero-photo{ object-position: 68% center; }
+}
 
 /* Section label used across Experiences to mark this is a curated set,
    not a numbered sequence — a plain divider, not enumeration. */
